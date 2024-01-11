@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "voose-app",
+    "productName": "Voose",
     "version": "0.0.1"
   },
   "tauri": {
