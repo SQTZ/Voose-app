@@ -71,13 +71,26 @@ function SelectionDP() {
         setInputSets([...inputSets, {}]);
     };
 
+    // Suprimer un ensemble d'inputs
+    const removeInputSet = (index) => {
+        // Filtrer l'ensemble d'inputs à supprimer
+        const newInputSets = inputSets.filter((_, i) => i !== index);
+        setInputSets(newInputSets);
+    };
+
     return (
         <div>
+            <h1>Création du fichier</h1>
             <form>
                 {inputSets.map((inputSet, index) => (
-                    <div key={index}>
+                    <div key={index} className='block-inputs'>
+                        {inputSets.length > 1 && (
+                            <button type="button" onClick={() => removeInputSet(index)}>
+                                Supprimer
+                            </button>
+                        )}
                
-                        <div>
+                        <div className='container-input'>
                             <label htmlFor={`type_${index}`}>Type</label>
                             <select name={`Productordecli_${index}`} id={`a_colonne_${index}`} onChange={(e) => handleSelectChange(e, index)} value={inputSet.selectedOption || ''}>
                                 <option value="">Select</option>
@@ -90,15 +103,18 @@ function SelectionDP() {
                         </div>
 
                       
-                        <div>
+                        <div className='container-input'>
                             <label htmlFor={`b_${index}`}>B</label>
                             <input type="text" id={`b_colonne_${index}`} />
                         </div>
+
                     </div>
                 ))}
 
-                <button type="button" onClick={addInputSet}>Ajouter un ensemble d'inputs</button>
-                <button type="button" onClick={(event) => SubmitToCSVtest(event)}>Clique</button>
+                <div className='end-step'>
+                <button type="button" className="btn-event" onClick={addInputSet}>Ajouter</button>
+                <button type="button" className="btn-event" onClick={(event) => SubmitToCSVtest(event)}>Créer</button>
+                </div>
             </form>
         </div>
     );

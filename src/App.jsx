@@ -5,7 +5,6 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Test Form JS</h1>
 
       <SelectedDP />
     </div>

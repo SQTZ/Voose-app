@@ -1,5 +1,6 @@
 body {
     background: #11111e;
+    margin: 0px 24px;
 }
 
 .container h1 {
@@ -12,8 +13,60 @@ form {
     display: flex;
 }
 
-form div {
+form {
     color: aliceblue;
     display: flex;
     flex-direction: column;
+}
+
+form .block-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.block-inputs .container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+form .end-step {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 20px;
+}
+
+.btn-event {
+    background: none;
+    color: #70d8c1;
+    border: 1px solid #70d8c1;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-event:hover {
+    background: #70d8c1;
+    color: aliceblue;
+}
+
+form input {
+    background: none;
+    border: 1px solid #70d8c1;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: aliceblue;
+}
+
+form select {
+    background: none;
+    border: 1px solid #70d8c1;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: aliceblue;
+    height: 30px;
 }
