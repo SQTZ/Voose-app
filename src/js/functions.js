@@ -33,6 +33,9 @@ export function SubmitToCSVtest() {
     const colonnesG = document.querySelectorAll("[id^='g_colonne_']");
     const colonnesH = document.querySelectorAll("[id^='h_colonne_']");
     const colonnesI = document.querySelectorAll("[id^='i_colonne_']");
+    const colonnesJ = document.querySelectorAll("[id^='j_colonne_']");
+    const colonnesK = document.querySelectorAll("[id^='k_colonne_']");
+    const colonnesL = document.querySelectorAll("[id^='l_colonne_']");
 
     const dataForCSV = Array.from(colonnesA).map((colonneA, index) => {
         const colonneB = colonnesB[index];
@@ -43,7 +46,12 @@ export function SubmitToCSVtest() {
         const colonneG = colonnesG[index];
         const colonneH = colonnesH[index];
         const colonneI = colonnesI[index];
-        return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '', colonneC: colonneC ? colonneC.value : '', colonneD: colonneD ? colonneD.value : '', colonneE: colonneE ? colonneE.value : '', colonneF: colonneF ? colonneF.value : '', colonneG: colonneG ? colonneG.value : '', colonneH: colonneH ? colonneH.value : '', colonneI: colonneI ? colonneI.value : '' };
+        const colonneJ = colonnesJ[index];
+        const colonneK = colonnesK[index];
+        const colonneL = colonnesL[index];
+
+        const valeurColonneL = colonneL && colonneL.checked ? "VRAI" : "FAUX";
+        return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '', colonneC: colonneC ? colonneC.value : '', colonneD: colonneD ? colonneD.value : '', colonneE: colonneE ? colonneE.value : '', colonneF: colonneF ? colonneF.value : '', colonneG: colonneG ? colonneG.value : '', colonneH: colonneH ? colonneH.value : '', colonneI: colonneI ? colonneI.value : '', colonneJ: colonneJ ? colonneJ.value : '', colonneK: colonneK ? colonneK.value : '', colonneL: valeurColonneL };
     });
 
     console.log(dataForCSV);

@@ -58,6 +58,7 @@ import optionstypeproduct from '../json/optiontypeproduct.json';
 import optionssexe from '../json/optionsexe.json';
 import optionsannee from '../json/optionannee.json';
 import optionsmarque from '../json/optionmarque.json';
+import optionscategorie from '../json/optioncategorie.json';
 
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
@@ -69,6 +70,13 @@ function SelectionDP() {
         newInputSets[index].selectedOptionPRDE = event.target.value;
         setInputSets(newInputSets);
     };
+
+    const handleCodeArticleChange = (event, index) => {
+        const newInputSets = [...inputSets];
+        newInputSets[index].codeArticle = event.target.value;
+        setInputSets(newInputSets);
+    };
+
 
     const handleDesignationChange = (event, index) => {
         const newInputSets = [...inputSets];
@@ -138,6 +146,19 @@ function SelectionDP() {
         setInputSets(newInputSets);
     };
 
+    const handleSelectChangeCategorie = (event, index) => {
+        const newInputSets = [...inputSets];
+        newInputSets[index].selectedOptionCategorie = event.target.value;
+        setInputSets(newInputSets);
+    };
+
+    const [commercialise, setCommercialise] = useState("FAUX");
+
+const handleCheckboxChange = (e) => {
+    setCommercialise(e.target.checked ? "VRAI" : "FAUX");
+};
+    
+    
 
 
     // Ajouter un nouvel ensemble d'inputs
@@ -178,12 +199,12 @@ function SelectionDP() {
 
 
                         <div className='container-input'>
-                            <label htmlFor={`b_${index}`}>Code Article</label>
-                            <input type="text" id={`b_colonne_${index}`} value={inputSet.codeArticle || ''} />
+                            <label htmlFor={`b_${index}`}>Code</label>
+                            <input type="text" id={`b_colonne_${index}`} value={inputSet.codeArticle || ''} onChange={(e) => handleCodeArticleChange(e, index)} />
                         </div>
 
                         <div className='container-input'>
-                            <label htmlFor={`c_${index}`}>EAN</label>
+                            <label htmlFor={`c_${index}`}>Code Barre</label>
                             <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
                         </div>
 
@@ -210,7 +231,7 @@ function SelectionDP() {
                         </div>
 
                         <div className='container-input'>
-                            <label htmlFor={`type_${index}`}>Type</label>
+                            <label htmlFor={`type_${index}`}>S-Famille</label>
                             <select name={`TypeProduct_${index}`} id={`g_colonne_${index}`} onChange={(e) => handleSelectChangeTypeProduct(e, index)} value={inputSet.selectedOptionTypeProduct || ''}>
                                 <option value="">Select</option>
                                 {optionstypeproduct.map(option => (
@@ -234,7 +255,7 @@ function SelectionDP() {
                         </div>
 
                         <div className='container-input'>
-                            <label htmlFor={`type_${index}`}>Année</label>
+                            <label htmlFor={`type_${index}`}>Collection</label>
                             <select name={`Annee_${index}`} id={`i_colonne_${index}`} onChange={(e) => handleSelectChangeAnnee(e, index)} value={inputSet.selectedOptionAnnee || ''}>
                                 <option value="">Select</option>
                                 {optionsannee.map(option => (
@@ -256,6 +277,29 @@ function SelectionDP() {
                                 ))}
                             </select>
                         </div>
+
+                        <div className='container-input'>
+                            <label htmlFor={`type_${index}`}>Catégorie</label>
+                            <select name={`Categorie_${index}`} id={`k_colonne_${index}`} onChange={(e) => handleSelectChangeCategorie(e, index)} value={inputSet.selectedOptionCategorie || ''}>
+                                <option value="">Select</option>
+                                {optionscategorie.map(option => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.text}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div className='container-input'>
+    <label htmlFor={`commercialise_${index}`}>Commercialisé</label>
+    <input 
+        type="checkbox" 
+        id={`l_colonne_${index}`} 
+        onChange={handleCheckboxChange}
+        checked={commercialise === "VRAI"}
+    />
+</div>
+
 
                     </div>
                 ))}
