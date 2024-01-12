@@ -30,6 +30,10 @@ form .block-inputs {
     flex-direction: column;
 }
 
+.blocked {
+  display: none !important;
+}
+
 form .end-step {
     display: flex;
     flex-direction: row;

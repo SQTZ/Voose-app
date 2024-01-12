@@ -28,12 +28,22 @@ export function SubmitToCSVtest() {
     const colonnesB = document.querySelectorAll("[id^='b_colonne_']");
     const colonnesC = document.querySelectorAll("[id^='c_colonne_']");
     const colonnesD = document.querySelectorAll("[id^='d_colonne_']");
+    const colonnesE = document.querySelectorAll("[id^='e_colonne_']");
+    const colonnesF = document.querySelectorAll("[id^='f_colonne_']");
+    const colonnesG = document.querySelectorAll("[id^='g_colonne_']");
+    const colonnesH = document.querySelectorAll("[id^='h_colonne_']");
+    const colonnesI = document.querySelectorAll("[id^='i_colonne_']");
 
     const dataForCSV = Array.from(colonnesA).map((colonneA, index) => {
         const colonneB = colonnesB[index];
         const colonneC = colonnesC[index];
         const colonneD = colonnesD[index];
-        return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '', colonneC: colonneC ? colonneC.value : '', colonneD: colonneD ? colonneD.value : '' };
+        const colonneE = colonnesE[index];
+        const colonneF = colonnesF[index];
+        const colonneG = colonnesG[index];
+        const colonneH = colonnesH[index];
+        const colonneI = colonnesI[index];
+        return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '', colonneC: colonneC ? colonneC.value : '', colonneD: colonneD ? colonneD.value : '', colonneE: colonneE ? colonneE.value : '', colonneF: colonneF ? colonneF.value : '', colonneG: colonneG ? colonneG.value : '', colonneH: colonneH ? colonneH.value : '', colonneI: colonneI ? colonneI.value : '' };
     });
 
     console.log(dataForCSV);
