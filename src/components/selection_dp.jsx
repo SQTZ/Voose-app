@@ -91,7 +91,7 @@ function SelectionDP() {
                         )}
                
                         <div className='container-input'>
-                            <label htmlFor={`type_${index}`}>Type</label>
+                            <label htmlFor={`type_${index}`}>PR/DE</label>
                             <select name={`Productordecli_${index}`} id={`a_colonne_${index}`} onChange={(e) => handleSelectChange(e, index)} value={inputSet.selectedOption || ''}>
                                 <option value="">Select</option>
                                 {options.map(option => (
@@ -104,8 +104,18 @@ function SelectionDP() {
 
                       
                         <div className='container-input'>
-                            <label htmlFor={`b_${index}`}>B</label>
+                            <label htmlFor={`b_${index}`}>Code Article</label>
                             <input type="text" id={`b_colonne_${index}`} />
+                        </div>
+
+                        <div className='container-input'>
+                            <label htmlFor={`c_${index}`}>EAN</label>
+                            <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
+                        </div>
+
+                        <div className='container-input'>
+                            <label htmlFor={`d_${index}`}>EAN</label>
+                            <input type="text" id={`d_colonne_${index}`} readOnly="readonly"/>
                         </div>
 
                     </div>

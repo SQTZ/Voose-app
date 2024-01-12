@@ -26,10 +26,14 @@ export function SubmitToCSVtest() {
     // Collecter les valeurs des ensembles d'inputs
     const colonnesA = document.querySelectorAll("[id^='a_colonne_']");
     const colonnesB = document.querySelectorAll("[id^='b_colonne_']");
+    const colonnesC = document.querySelectorAll("[id^='c_colonne_']");
+    const colonnesD = document.querySelectorAll("[id^='d_colonne_']");
 
     const dataForCSV = Array.from(colonnesA).map((colonneA, index) => {
         const colonneB = colonnesB[index];
-        return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '' };
+        const colonneC = colonnesC[index];
+        const colonneD = colonnesD[index];
+        return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '', colonneC: colonneC ? colonneC.value : '', colonneD: colonneD ? colonneD.value : '' };
     });
 
     console.log(dataForCSV);

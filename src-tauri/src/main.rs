@@ -53,6 +53,8 @@ use csv::Writer;
 struct InputData {
     colonneA: String,
     colonneB: String,
+    colonneC: String,
+    colonneD: String,
 }
 
 #[tauri::command]
@@ -76,7 +78,7 @@ fn create_csv_on_desktop(data: Vec<InputData>) -> Result<(), String> {
     // Écrire chaque ensemble de données dans le fichier CSV
     for input_data in data {
         // Utilisez input_data.colonneA et input_data.colonneB directement
-        if wtr.write_record(&[input_data.colonneA, input_data.colonneB]).is_err() {
+        if wtr.write_record(&[input_data.colonneA, input_data.colonneB, input_data.colonneC, input_data.colonneD]).is_err() {
             return Err("Erreur lors de l'écriture dans le fichier CSV".to_string());
         }
     }
