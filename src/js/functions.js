@@ -82,11 +82,15 @@ export function SubmitToCSVtest() {
         const colonneAA = colonnesAA[index];
         const colonneAB = colonnesAB[index];
 
+ // Vérifier si l'option DE est sélectionnée pour l'ensemble d'inputs courant
+ const isDESelected = colonneA && colonneA.value === 'DE';
+
 
         const valeurColonneL = colonneL && colonneL.checked ? "VRAI" : "FAUX";
         const valeurColonneM = colonneM && colonneM.checked ? "VRAI" : "FAUX";
-        const valeurColonneN = colonneN && colonneN.checked ? "VRAI" : "FAUX";
-        const valeurColonneO = colonneO && colonneO.checked ? "VRAI" : "FAUX";
+// Conditionner les valeurs de colonneN et colonneO en fonction de isDESelected
+        const valeurColonneN = isDESelected ? '' : (colonnesN[index] && colonnesN[index].checked ? "VRAI" : "FAUX");
+        const valeurColonneO = isDESelected ? '' : (colonnesO[index] && colonnesO[index].checked ? "VRAI" : "FAUX");
         return { colonneA: colonneA.value, colonneB: colonneB ? colonneB.value : '', colonneC: colonneC ? colonneC.value : '', colonneD: colonneD ? colonneD.value : '', colonneE: colonneE ? colonneE.value : '', colonneF: colonneF ? colonneF.value : '', colonneG: colonneG ? colonneG.value : '', colonneH: colonneH ? colonneH.value : '', colonneI: colonneI ? colonneI.value : '', colonneJ: colonneJ ? colonneJ.value : '', colonneK: colonneK ? colonneK.value : '', colonneL: valeurColonneL, colonneM: valeurColonneM, colonneN: valeurColonneN, colonneO: valeurColonneO, colonneP: colonneP ? colonneP.value : '', colonneQ: colonneQ ? colonneQ.value : '', colonneR: colonneR ? colonneR.value : '', colonneS: colonneS ? colonneS.value : '', colonneT: colonneT ? colonneT.value : '', colonneU: colonneU ? colonneU.value : '', colonneV: colonneV ? colonneV.value : '', colonneW: colonneW ? colonneW.value : '', colonneX: colonneX ? colonneX.value : '', colonneY: colonneY ? colonneY.value : '', colonneZ: colonneZ ? colonneZ.value : '', colonneAA: colonneAA ? colonneAA.value : '', colonneAB: colonneAB ? colonneAB.value : '' };
     });
 
