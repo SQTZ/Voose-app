@@ -27,11 +27,11 @@ form .block-inputs {
 
 .block-inputs .container-input {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .blocked {
-  display: none !important;
+    display: none !important;
 }
 
 form .end-step {
@@ -57,12 +57,27 @@ form .end-step {
 }
 
 form input {
-    background: none;
-    border: 1px solid #70d8c1;
-    border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 1rem;
-    color: aliceblue;
+    border-radius: 10px 0px 0px 10px;
+    background: #0E0E19;
+    border: 1px solid #0E0E19;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 10px 10px;
+    color: #3C3C53;
+}
+
+form input::placeholder {
+    color: #3C3C53;
+}
+
+.texter-btn {
+    background: #70d8c1;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    color: #11111E;
+    font-weight: bold;
 }
 
 form select {

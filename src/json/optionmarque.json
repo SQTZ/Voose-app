@@ -2,12 +2,14 @@
     {
         "text": "TAYLOR MADE",
         "value": "TAYLOR MADE",
-        "brief": "TA"
+        "brief": "TA",
+        "achat_fournisseur": "TA"
     },
     {
-        "text": "TAYLOR MADE",
-        "value": "TAYLOR MADE",
-        "brief": "TA"
+        "text": "CALLAWAY",
+        "value": "CALLAWAY",
+        "brief": "CA",
+        "achat_fournisseur": "CALL"
     },
     {
         "text": "TAYLOR MADE",
