@@ -144,6 +144,7 @@ function SelectionDP() {
         // Préfixer la désignation avec le texte de la marque
         const currentDesignation = newInputSets[index].designation || '';
         newInputSets[index].designation = marqueText + " - " + currentDesignation;
+        newInputSets[index].selectedOptionMarque = event.target.value;
 
         setInputSets(newInputSets);
     };
@@ -210,36 +211,48 @@ function SelectionDP() {
                     <div key={index} className='block-inputs'>
                         {inputSets.length > 1 && (
                             <button type="button" onClick={() => removeInputSet(index)}>
-                                Supprimer
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70D8C1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 7l16 0" />
+  <path d="M10 11l0 6" />
+  <path d="M14 11l0 6" />
+  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+</svg>
                             </button>
                         )}
 
-                        <div className='container-input'>
-                            {/* <label htmlFor={`type_${index}`}>PR/DE</label> */}
-                            <select name={`Productordecli_${index}`} className="input-select" id={`a_colonne_${index}`} onChange={(e) => handleSelectChangePRDE(e, index)} value={inputSet.selectedOptionPRDE || ''}>
-                                <option value="">PR / DE</option>
-                                {optionsprde.map(option => (
-                                    <option key={option.value} value={option.value}>
-                                        {option.text}
-                                    </option>
-                                ))}
-                            </select>
-                            <div className='texter-btn'>A</div>
-                        </div>
+
 
                         {inputSet.selectedOptionPRDE !== 'PR' && (
                             <>
                                 {/* Ici, placez les autres inputs qui doivent être affichés lorsque ce n'est pas DE */}
 
-                                <div className='container-input blocked'>
-                                    <input type="text" id={`b_colonne_${index}`} readOnly="readonly" />
-                                    <div className='texter-btn'>B</div>
-                                </div>
+                                <div className='box'>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`type_${index}`}>PR/DE</label> */}
+                                        <select name={`Productordecli_${index}`} className="input-select" id={`a_colonne_${index}`} onChange={(e) => handleSelectChangePRDE(e, index)} value={inputSet.selectedOptionPRDE || ''}>
+                                            <option value="">PR / DE</option>
+                                            {optionsprde.map(option => (
+                                                <option key={option.value} value={option.value}>
+                                                    {option.text}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <div className='texter-btn'>A</div>
+                                    </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
-                                    <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
-                                    <div className='texter-btn'>C</div>
+
+                                    <div className='container-input blocked'>
+                                        <input type="text" id={`b_colonne_${index}`} readOnly="readonly" />
+                                        <div className='texter-btn'>B</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                                        <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
+                                        <div className='texter-btn'>C</div>
+                                    </div>
                                 </div>
 
                                 <div className='container-input blocked'>
@@ -248,32 +261,34 @@ function SelectionDP() {
                                     <div className='texter-btn'>D</div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
-                                    <input type="text" id={`e_colonne_${index}`} placeholder='Taille' />
-                                    <div className='texter-btn'>E</div>
-                                </div>
+                                <div className='box'>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
+                                        <input type="text" id={`e_colonne_${index}`} placeholder='Taille' />
+                                        <div className='texter-btn'>E</div>
+                                    </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
-                                    <input type="text" id={`f_colonne_${index}`} placeholder='Couleur' />
-                                    <div className='texter-btn'>F</div>
-                                </div>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
+                                        <input type="text" id={`f_colonne_${index}`} placeholder='Couleur' />
+                                        <div className='texter-btn'>F</div>
+                                    </div>
 
-                                <div className='container-input blocked'>
-                                    <input type="text" id={`g_colonne_${index}`} readOnly="readonly" />
-                                    <div className='texter-btn'>G</div>
-                                </div>
+                                    <div className='container-input blocked'>
+                                        <input type="text" id={`g_colonne_${index}`} readOnly="readonly" />
+                                        <div className='texter-btn'>G</div>
+                                    </div>
 
-                                <div className='container-input blocked'>
-                                    <input type="text" id={`h_colonne_${index}`} readOnly="readonly" />
-                                    <div className='texter-btn'>H</div>
-                                </div>
+                                    <div className='container-input blocked'>
+                                        <input type="text" id={`h_colonne_${index}`} readOnly="readonly" />
+                                        <div className='texter-btn'>H</div>
+                                    </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
-                                    <input type="text" id={`i_colonne_${index}`} placeholder='Couleur' />
-                                    <div className='texter-btn'>I</div>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
+                                        <input type="text" id={`i_colonne_${index}`} placeholder='Matière' />
+                                        <div className='texter-btn'>I</div>
+                                    </div>
                                 </div>
 
                                 <div className='container-input blocked'>
@@ -286,27 +301,37 @@ function SelectionDP() {
                                     <div className='texter-btn'>K</div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`commercialise_${index}`}>Commercialisé</label> */}
-                                    <input
-                                        type="checkbox"
-                                        id={`l_colonne_${index}`}
-                                        onChange={handleCheckboxChange}
-                                        checked={commercialise === "VRAI"}
-                                    />
-                                    <div className='texter-btn'>L</div>
-                                </div>
+                                <div className='box'>
+                                    <div>
+                                    <h3>Déclinaison</h3>
+                                    <p>Pensez à cocher les deux cases.</p>
+                                    </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`stocke_${index}`}>Stocké</label> */}
-                                    <input
-                                        type="checkbox"
-                                        id={`m_colonne_${index}`}
-                                        onChange={handleCheckboxStockChange}
-                                        checked={stocke === "VRAI"}
-                                    />
-                                    <div className='texter-btn'>M</div>
-                                </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`commercialise_${index}`}>Commercialisé</label> */}
+                                        <input
+                                            type="checkbox"
+                                            id={`l_colonne_${index}`}
+                                            onChange={handleCheckboxChange}
+                                            checked={commercialise === "VRAI"}
+                                        />
+                                        <div className='texter-btn'>L</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`stocke_${index}`}>Stocké</label> */}
+                                        <input
+                                            type="checkbox"
+                                            id={`m_colonne_${index}`}
+                                            onChange={handleCheckboxStockChange}
+                                            checked={stocke === "VRAI"}
+                                            className='testxer'
+                                        />
+                                        <div className='texter-btn'>M</div>
+                                    </div>
+                                    </div>
+
 
                                 <div className='container-input blocked'>
                                     <input type="text" id={`n_colonne_${index}`} readOnly="readonly" />
@@ -328,29 +353,38 @@ function SelectionDP() {
                                     <div className='texter-btn'>Q</div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`prixachatht_${index}`}>Prix Achat HT</label> */}
-                                    <input type="text" id={`r_colonne_${index}`} placeholder='Prix Achat HT' />
-                                    <div className='texter-btn'>R</div>
+
+                                <div className='box'>
+                                    <div className='flexing'>
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`prixachatht_${index}`}>Prix Achat HT</label> */}
+                                            <input type="text" id={`r_colonne_${index}`} placeholder='Prix Achat HT' />
+                                            <div className='texter-btn'>R</div>
+                                        </div>
+
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`remise_${index}`}>Remise</label> */}
+                                            <input type="text" id={`s_colonne_${index}`} placeholder='Remise' />
+                                            <div className='texter-btn'>S</div>
+                                        </div>
+
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`prixventettc_${index}`}>Prix Vente TTC</label> */}
+                                            <input type="text" id={`t_colonne_${index}`} placeholder='Prix Vente TTC' />
+                                            <div className='texter-btn'>T</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
+                                        <input type="text" id={`u_colonne_${index}`} value={"Prix moyen pondéré d'achat"} />
+                                        <div className='texter-btn'>U</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`remise_${index}`}>Remise</label> */}
-                                    <input type="text" id={`s_colonne_${index}`} placeholder='Remise' />
-                                    <div className='texter-btn'>S</div>
-                                </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`prixventettc_${index}`}>Prix Vente TTC</label> */}
-                                    <input type="text" id={`t_colonne_${index}`} placeholder='Prix Vente TTC' />
-                                    <div className='texter-btn'>T</div>
-                                </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
-                                    <input type="text" id={`u_colonne_${index}`} value={"Prix moyen pondéré d'achat"} />
-                                    <div className='texter-btn'>U</div>
-                                </div>
 
                                 <div className='container-input blocked'>
                                     <input type="text" id={`v_colonne_${index}`} readOnly="readonly" />
@@ -395,6 +429,21 @@ function SelectionDP() {
 
                         {inputSet.selectedOptionPRDE !== 'DE' && (
                             <>
+
+                                <div className='box'>
+                                <div className='container-input'>
+                                    {/* <label htmlFor={`type_${index}`}>PR/DE</label> */}
+                                    <select name={`Productordecli_${index}`} className="input-select" id={`a_colonne_${index}`} onChange={(e) => handleSelectChangePRDE(e, index)} value={inputSet.selectedOptionPRDE || ''}>
+                                        <option value="">PR / DE</option>
+                                        {optionsprde.map(option => (
+                                            <option key={option.value} value={option.value}>
+                                                {option.text}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className='texter-btn'>A</div>
+                                </div>
+
                                 <div className='container-input'>
                                     {/* <label htmlFor={`b_${index}`}>Code</label> */}
                                     <input type="text" id={`b_colonne_${index}`} value={inputSet.codeArticle || 'Code Article'} onChange={(e) => handleCodeArticleChange(e, index)} />
@@ -407,6 +456,14 @@ function SelectionDP() {
                                     <div className='texter-btn'>C</div>
                                 </div>
 
+                                <div className='container-input'>
+                                    {/* <label htmlFor={`achatreference_${index}`}>Achat Réference</label> */}
+                                    <input type="text" id={`q_colonne_${index}`} placeholder='Achat Réference' />
+                                    <div className='texter-btn'>Q</div>
+                                </div>
+                                </div>
+
+                                <div className='box'>
                                 <div className='container-input blocked'>
                                     {/* <label htmlFor={`d_${index}`}></label> */}
                                     <input type="text" id={`d_colonne_${index}`} readOnly="readonly" />
@@ -419,6 +476,15 @@ function SelectionDP() {
                                     <div className='texter-btn'>E</div>
                                 </div>
 
+                                <div className='container-input'>
+                                    {/* <label htmlFor={`edesignation_${index}`}>e-designation</label> */}
+                                    <input type="text" id={`ab_colonne_${index}`} value={inputSet.designation || 'E-Désignation'} onChange={(e) => handleDesignationChange(e, index)} />
+                                    <div className='texter-btn'>AB</div>
+                                </div>
+                                </div>
+
+                                <div className='box'>
+                                <div className='flexing'>
                                 <div className='container-input'>
                                     {/* <label htmlFor={`type_${index}`}>Famille</label> */}
                                     <select name={`Family_${index}`} id={`f_colonne_${index}`} onChange={(e) => handleSelectChangeFamily(e, index)} value={inputSet.selectedOptionFamily || ''}>
@@ -444,7 +510,9 @@ function SelectionDP() {
                                     </select>
                                     <div className='texter-btn'>G</div>
                                 </div>
+                                </div>
 
+                                <div className='flexing'>
                                 <div className='container-input'>
                                     {/* <label htmlFor={`type_${index}`}>Sexe</label> */}
                                     <select name={`Sexe_${index}`} id={`h_colonne_${index}`} onChange={(e) => handleSelectChangeSexe(e, index)} value={inputSet.selectedOptionSexe || ''}>
@@ -470,7 +538,9 @@ function SelectionDP() {
                                     </select>
                                     <div className='texter-btn'>I</div>
                                 </div>
+                                </div>
 
+                                <div className='flexing'>
                                 <div className='container-input'>
                                     {/* <label htmlFor={`type_${index}`}>Marque</label> */}
                                     <select name={`Marque_${index}`} id={`j_colonne_${index}`} onChange={(e) => handleSelectChangeMarque(e, index)} value={inputSet.selectedOptionMarque || ''}>
@@ -485,6 +555,20 @@ function SelectionDP() {
                                 </div>
 
                                 <div className='container-input'>
+                                    {/* <label htmlFor={`type_${index}`}>Achat Fournisseur</label> */}
+                                    <select name={`achatfournisseur_${index}`} id={`p_colonne_${index}`} onChange={(e) => handleSelectChangeAchatFournisseur(e, index)} value={inputSet.selectedOptionAchatFournisseur || ''}>
+                                        <option value="">Select</option>
+                                        {optionsachatfournisseur.map(option => (
+                                            <option key={option.value} value={option.achat_fournisseur}>
+                                                {option.text}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className='texter-btn'>P</div>
+                                </div>
+                                </div>
+
+                                <div className='container-input'>
                                     {/* <label htmlFor={`type_${index}`}>Catégorie</label> */}
                                     <select name={`Categorie_${index}`} id={`k_colonne_${index}`} onChange={(e) => handleSelectChangeCategorie(e, index)} value={inputSet.selectedOptionCategorie || ''}>
                                         <option value="">Catégorie</option>
@@ -496,7 +580,15 @@ function SelectionDP() {
                                     </select>
                                     <div className='texter-btn'>K</div>
                                 </div>
+                                </div>
 
+                                
+
+                                <div className='box'>
+                                <div>
+                                    <h3>Stocks</h3>
+                                    <p>Cochez <span>L</span> & <span>M</span> par défaut</p>
+                                    </div>
                                 <div className='container-input'>
                                     {/* <label htmlFor={`commercialise_${index}`}>Commercialisé</label> */}
                                     <input
@@ -540,26 +632,10 @@ function SelectionDP() {
                                     />
                                     <div className='texter-btn'>O</div>
                                 </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Achat Fournisseur</label> */}
-                                    <select name={`achatfournisseur_${index}`} id={`p_colonne_${index}`} onChange={(e) => handleSelectChangeAchatFournisseur(e, index)} value={inputSet.selectedOptionAchatFournisseur || ''}>
-                                        <option value="">Select</option>
-                                        {optionsachatfournisseur.map(option => (
-                                            <option key={option.value} value={option.achat_fournisseur}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>P</div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`achatreference_${index}`}>Achat Réference</label> */}
-                                    <input type="text" id={`q_colonne_${index}`} placeholder='Achat Réference' />
-                                    <div className='texter-btn'>Q</div>
-                                </div>
 
+                                <div className='box'>
                                 <div className='container-input'>
                                     {/* <label htmlFor={`prixachatht_${index}`}>Prix Achat HT</label> */}
                                     <input type="text" id={`r_colonne_${index}`} placeholder='Prix Achat HT' />
@@ -577,13 +653,10 @@ function SelectionDP() {
                                     <input type="text" id={`t_colonne_${index}`} placeholder='Prix Vente TTC' />
                                     <div className='texter-btn'>T</div>
                                 </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
-                                    <input type="text" id={`u_colonne_${index}`} placeholder='Méthode valorisation Stock' />
-                                    <div className='texter-btn'>U</div>
                                 </div>
 
+
+                                <div className='box'>
                                 <div className='container-input'>
                                     {/* <label htmlFor={`grilletaille_${index}`}>Grille Taille</label> */}
                                     <input type="text" id={`v_colonne_${index}`} placeholder='Grille Taille' />
@@ -600,6 +673,14 @@ function SelectionDP() {
                                     {/* <label htmlFor={`grillematiere_${index}`}>Grille Matière</label> */}
                                     <input type="text" id={`x_colonne_${index}`} placeholder='Grille Matière' />
                                     <div className='texter-btn'>X</div>
+                                </div>
+                                </div>
+
+                                <div className='box'>
+                                <div className='container-input'>
+                                    {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
+                                    <input type="text" id={`u_colonne_${index}`} placeholder='Méthode valorisation Stock' />
+                                    <div className='texter-btn'>U</div>
                                 </div>
 
                                 <div className='container-input'>
@@ -619,12 +700,9 @@ function SelectionDP() {
                                     <input type="text" id={`aa_colonne_${index}`} placeholder='Prix Conseillé' />
                                     <div className='texter-btn'>AA</div>
                                 </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`edesignation_${index}`}>e-designation</label> */}
-                                    <input type="text" id={`ab_colonne_${index}`} value={inputSet.designation || 'E-Désignation'} onChange={(e) => handleDesignationChange(e, index)} />
-                                    <div className='texter-btn'>AB</div>
                                 </div>
+
+                                
                             </>
                         )}
 
