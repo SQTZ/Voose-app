@@ -24,6 +24,8 @@ export function SubmitToCSVtest() {
     console.log("Je suis dans la fonction SubmitToCSVtest()");
 
     // Collecter les valeurs des ensembles d'inputs
+    const nameFile = document.getElementById("name_file").value;
+
     const colonnesA = document.querySelectorAll("[id^='a_colonne_']");
     const colonnesB = document.querySelectorAll("[id^='b_colonne_']");
     const colonnesC = document.querySelectorAll("[id^='c_colonne_']");
@@ -95,9 +97,10 @@ export function SubmitToCSVtest() {
     });
 
     console.log(dataForCSV);
+    console.log(nameFile);
 
     // Envoi des données à la fonction 'create_csv_on_desktop' de Tauri
-    invoke('create_csv_on_desktop', { data: dataForCSV });
+    invoke('create_csv_on_desktop', { data: dataForCSV, nameFile: nameFile });
 }
 
 

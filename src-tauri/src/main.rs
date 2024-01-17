@@ -81,13 +81,16 @@ struct InputData {
     colonneAB: String,
 }
 
+
 #[tauri::command]
-fn create_csv_on_desktop(data: Vec<InputData>) -> Result<(), String> {
+fn create_csv_on_desktop(data: Vec<InputData>, nameFile: String) -> Result<(), String> {
+    println!("Received name_file: {}", nameFile);
+    println!("Received data length: {}", data.len());
     // Construire le chemin vers le bureau de l'utilisateur
     let mut desktop_path = home_dir()
         .ok_or_else(|| "Impossible de trouver le répertoire de l'utilisateur".to_string())?;
     desktop_path.push("Desktop");
-    desktop_path.push("mon_fichier.csv");
+    desktop_path.push(nameFile + ".csv");
 
     // Ouvrir le fichier CSV en mode append
     let file = OpenOptions::new()

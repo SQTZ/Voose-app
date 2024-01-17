@@ -85,6 +85,13 @@ form input {
     font-family: Montserrat;
 }
 
+form input:focus {
+    border: 1px solid #70d8c1;
+}
+
+input:focus{
+    outline: none;
+}
 
 form input::placeholder {
     color: #3C3C53;
@@ -128,6 +135,12 @@ form select {
     gap: 20px;
 }
 
+.flexing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h3 {
     color: #78F4CE;
     text-shadow: 0px 0px 30px #78F4CE;
@@ -154,4 +167,9 @@ span {
     font-weight: bold;
 }
 
+.box-export {
+    background: #70d8c1;
+    padding: 3px;
+    border-radius: 0px 10px 10px 0px;
+}
 
