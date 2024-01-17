@@ -102,6 +102,7 @@ function SelectionDP() {
         const lastTwoDigits = annee.length > 2 ? annee.substring(annee.length - 2) : annee;
 
         newInputSets[index].codeArticle = event.target.value + marque + lastTwoDigits;
+        newInputSets[index].selectedOptionTypeProduct = event.target.value;
         setInputSets(newInputSets);
     };
 
@@ -120,6 +121,7 @@ function SelectionDP() {
         const lastTwoDigits = event.target.value.length > 2 ? event.target.value.substring(event.target.value.length - 2) : event.target.value;
 
         newInputSets[index].codeArticle = typeProduct + marque + lastTwoDigits;
+        newInputSets[index].selectedOptionAnnee = event.target.value;
         setInputSets(newInputSets);
     };
 
@@ -133,7 +135,7 @@ function SelectionDP() {
         const marqueText = selectedMarqueObj ? selectedMarqueObj.text : '';
 
         // Mise à jour de la marque dans l'état
-        newInputSets[index].selectedOptionMarque = briefValue;
+        newInputSets[index].selectedOptionMarque = event.target.value;
 
         // Mise à jour du codeArticle
         const typeProduct = newInputSets[index].selectedOptionTypeProduct || '';
@@ -144,7 +146,6 @@ function SelectionDP() {
         // Préfixer la désignation avec le texte de la marque
         const currentDesignation = newInputSets[index].designation || '';
         newInputSets[index].designation = marqueText + " - " + currentDesignation;
-        newInputSets[index].selectedOptionMarque = event.target.value;
 
         setInputSets(newInputSets);
     };
@@ -203,23 +204,32 @@ function SelectionDP() {
     return (
         <div>
             <div className='flexing'>
-            <div className='container-text'>
-                <h1>Créer</h1>
-                <p>Pour connaître plus d'informations sur le fonctionnement de la création. Cliquez-ici.</p>
-            </div>
+                <div className='container-text'>
+                    <div>
+                        <a href='/'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M9 14l-4 -4l4 -4" />
+                            <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
+                        </svg></a>
+                    </div>
+                    <div>
+                        <h1>Créer</h1>
+                        <p>Pour connaître plus d'informations sur le fonctionnement de la création. Cliquez-ici.</p>
+                    </div>
+                </div>
 
-           <div>
-            <form>
-            <div className='flexing'>
-            <input type="text" id="name_file" placeholder='Nom de votre fichier'></input>
-            <div className='box-export'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-export" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-  <path d="M11.5 21h-4.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v5m-5 6h7m-3 -3l3 3l-3 3" />
-</svg></div>
-            </div>
-            </form>
-           </div>
+                <div>
+                    <form>
+                        <div className='flexing'>
+                            <input type="text" id="name_file" placeholder='Nom de votre fichier'></input>
+                            <div className='box-export'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-export" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                                <path d="M11.5 21h-4.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v5m-5 6h7m-3 -3l3 3l-3 3" />
+                            </svg></div>
+                        </div>
+                    </form>
+                </div>
             </div>
             <form>
                 {inputSets.map((inputSet, index) => (
@@ -227,13 +237,13 @@ function SelectionDP() {
                         {inputSets.length > 1 && (
                             <button type="button" onClick={() => removeInputSet(index)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70D8C1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 7l16 0" />
-  <path d="M10 11l0 6" />
-  <path d="M14 11l0 6" />
-  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-</svg>
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M4 7l16 0" />
+                                    <path d="M10 11l0 6" />
+                                    <path d="M14 11l0 6" />
+                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                </svg>
                             </button>
                         )}
 
@@ -318,8 +328,8 @@ function SelectionDP() {
 
                                 <div className='box'>
                                     <div>
-                                    <h3>Déclinaison</h3>
-                                    <p>Pensez à cocher les deux cases.</p>
+                                        <h3>Déclinaison</h3>
+                                        <p>Pensez à cocher les deux cases.</p>
                                     </div>
 
 
@@ -345,7 +355,7 @@ function SelectionDP() {
                                         />
                                         <div className='texter-btn'>M</div>
                                     </div>
-                                    </div>
+                                </div>
 
 
                                 <div className='container-input blocked'>
@@ -446,278 +456,278 @@ function SelectionDP() {
                             <>
 
                                 <div className='box'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>PR/DE</label> */}
-                                    <select name={`Productordecli_${index}`} className="input-select" id={`a_colonne_${index}`} onChange={(e) => handleSelectChangePRDE(e, index)} value={inputSet.selectedOptionPRDE || ''}>
-                                        <option value="">PR / DE</option>
-                                        {optionsprde.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>A</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`b_${index}`}>Code</label> */}
-                                    <input type="text" id={`b_colonne_${index}`} value={inputSet.codeArticle || 'Code Article'} onChange={(e) => handleCodeArticleChange(e, index)} />
-                                    <div className='texter-btn'>B</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
-                                    <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
-                                    <div className='texter-btn'>C</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`achatreference_${index}`}>Achat Réference</label> */}
-                                    <input type="text" id={`q_colonne_${index}`} placeholder='Achat Réference' />
-                                    <div className='texter-btn'>Q</div>
-                                </div>
-                                </div>
-
-                                <div className='box'>
-                                <div className='container-input blocked'>
-                                    {/* <label htmlFor={`d_${index}`}></label> */}
-                                    <input type="text" id={`d_colonne_${index}`} readOnly="readonly" />
-                                    <div className='texter-btn'>D</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
-                                    <input type="text" id={`e_colonne_${index}`} value={inputSet.designation || 'Désignation'} onChange={(e) => handleDesignationChange(e, index)} />
-                                    <div className='texter-btn'>E</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`edesignation_${index}`}>e-designation</label> */}
-                                    <input type="text" id={`ab_colonne_${index}`} value={inputSet.designation || 'E-Désignation'} onChange={(e) => handleDesignationChange(e, index)} />
-                                    <div className='texter-btn'>AB</div>
-                                </div>
-                                </div>
-
-                                <div className='box'>
-                                <div className='flexing'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Famille</label> */}
-                                    <select name={`Family_${index}`} id={`f_colonne_${index}`} onChange={(e) => handleSelectChangeFamily(e, index)} value={inputSet.selectedOptionFamily || ''}>
-                                        <option value="">Famille</option>
-                                        {optionsfamily.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>F</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>S-Famille</label> */}
-                                    <select name={`TypeProduct_${index}`} id={`g_colonne_${index}`} onChange={(e) => handleSelectChangeTypeProduct(e, index)} value={inputSet.selectedOptionTypeProduct || ''}>
-                                        <option value="">S-Famille</option>
-                                        {optionstypeproduct.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>G</div>
-                                </div>
-                                </div>
-
-                                <div className='flexing'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Sexe</label> */}
-                                    <select name={`Sexe_${index}`} id={`h_colonne_${index}`} onChange={(e) => handleSelectChangeSexe(e, index)} value={inputSet.selectedOptionSexe || ''}>
-                                        <option value="">Sexe</option>
-                                        {optionssexe.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>H</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Collection</label> */}
-                                    <select name={`Annee_${index}`} id={`i_colonne_${index}`} onChange={(e) => handleSelectChangeAnnee(e, index)} value={inputSet.selectedOptionAnnee || ''}>
-                                        <option value="">Collection</option>
-                                        {optionsannee.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>I</div>
-                                </div>
-                                </div>
-
-                                <div className='flexing'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Marque</label> */}
-                                    <select name={`Marque_${index}`} id={`j_colonne_${index}`} onChange={(e) => handleSelectChangeMarque(e, index)} value={inputSet.selectedOptionMarque || ''}>
-                                        <option value="">Marque</option>
-                                        {optionsmarque.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>J</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Achat Fournisseur</label> */}
-                                    <select name={`achatfournisseur_${index}`} id={`p_colonne_${index}`} onChange={(e) => handleSelectChangeAchatFournisseur(e, index)} value={inputSet.selectedOptionAchatFournisseur || ''}>
-                                        <option value="">Select</option>
-                                        {optionsachatfournisseur.map(option => (
-                                            <option key={option.value} value={option.achat_fournisseur}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>P</div>
-                                </div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`type_${index}`}>Catégorie</label> */}
-                                    <select name={`Categorie_${index}`} id={`k_colonne_${index}`} onChange={(e) => handleSelectChangeCategorie(e, index)} value={inputSet.selectedOptionCategorie || ''}>
-                                        <option value="">Catégorie</option>
-                                        {optionscategorie.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.text}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <div className='texter-btn'>K</div>
-                                </div>
-                                </div>
-
-                                
-
-                                <div className='box'>
-                                <div>
-                                    <h3>Stocks</h3>
-                                    <p>Cochez <span>L</span> & <span>M</span> par défaut</p>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`type_${index}`}>PR/DE</label> */}
+                                        <select name={`Productordecli_${index}`} className="input-select" id={`a_colonne_${index}`} onChange={(e) => handleSelectChangePRDE(e, index)} value={inputSet.selectedOptionPRDE || ''}>
+                                            <option value="">PR / DE</option>
+                                            {optionsprde.map(option => (
+                                                <option key={option.value} value={option.value}>
+                                                    {option.text}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <div className='texter-btn'>A</div>
                                     </div>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`commercialise_${index}`}>Commercialisé</label> */}
-                                    <input
-                                        type="checkbox"
-                                        id={`l_colonne_${index}`}
-                                        onChange={handleCheckboxChange}
-                                        checked={commercialise === "VRAI"}
-                                    />
-                                    <div className='texter-btn'>L</div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`b_${index}`}>Code</label> */}
+                                        <input type="text" id={`b_colonne_${index}`} value={inputSet.codeArticle || 'Code Article'} onChange={(e) => handleCodeArticleChange(e, index)} />
+                                        <div className='texter-btn'>B</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                                        <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
+                                        <div className='texter-btn'>C</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`achatreference_${index}`}>Achat Réference</label> */}
+                                        <input type="text" id={`q_colonne_${index}`} placeholder='Achat Réference' />
+                                        <div className='texter-btn'>Q</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`stocke_${index}`}>Stocké</label> */}
-                                    <input
-                                        type="checkbox"
-                                        id={`m_colonne_${index}`}
-                                        onChange={handleCheckboxStockChange}
-                                        checked={stocke === "VRAI"}
-                                    />
-                                    <div className='texter-btn'>M</div>
+                                <div className='box'>
+                                    <div className='container-input blocked'>
+                                        {/* <label htmlFor={`d_${index}`}></label> */}
+                                        <input type="text" id={`d_colonne_${index}`} readOnly="readonly" />
+                                        <div className='texter-btn'>D</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
+                                        <input type="text" id={`e_colonne_${index}`} value={inputSet.designation || 'Désignation'} onChange={(e) => handleDesignationChange(e, index)} />
+                                        <div className='texter-btn'>E</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`edesignation_${index}`}>e-designation</label> */}
+                                        <input type="text" id={`ab_colonne_${index}`} value={inputSet.designation || 'E-Désignation'} onChange={(e) => handleDesignationChange(e, index)} />
+                                        <div className='texter-btn'>AB</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`divers_${index}`}>Divers</label> */}
-                                    <input
-                                        type="checkbox"
-                                        id={`n_colonne_${index}`}
-                                        onChange={handleCheckboxDiversChange}
-                                        checked={divers === "VRAI"}
-                                    />
-                                    <div className='texter-btn'>N</div>
+                                <div className='box'>
+                                    <div className='flexing'>
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`type_${index}`}>Famille</label> */}
+                                            <select name={`Family_${index}`} id={`f_colonne_${index}`} onChange={(e) => handleSelectChangeFamily(e, index)} value={inputSet.selectedOptionFamily || ''}>
+                                                <option value="">Famille</option>
+                                                {optionsfamily.map(option => (
+                                                    <option key={option.value} value={option.value}>
+                                                        {option.text}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className='texter-btn'>F</div>
+                                        </div>
+
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`type_${index}`}>S-Famille</label> */}
+                                            <select name={`TypeProduct_${index}`} id={`g_colonne_${index}`} onChange={(e) => handleSelectChangeTypeProduct(e, index)} value={inputSet.selectedOptionTypeProduct || ''}>
+                                                <option value="">S-Famille</option>
+                                                {optionstypeproduct.map(option => (
+                                                    <option key={option.value} value={option.value}>
+                                                        {option.text}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className='texter-btn'>G</div>
+                                        </div>
+                                    </div>
+
+                                    <div className='flexing'>
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`type_${index}`}>Sexe</label> */}
+                                            <select name={`Sexe_${index}`} id={`h_colonne_${index}`} onChange={(e) => handleSelectChangeSexe(e, index)} value={inputSet.selectedOptionSexe || ''}>
+                                                <option value="">Sexe</option>
+                                                {optionssexe.map(option => (
+                                                    <option key={option.value} value={option.value}>
+                                                        {option.text}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className='texter-btn'>H</div>
+                                        </div>
+
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`type_${index}`}>Collection</label> */}
+                                            <select name={`Annee_${index}`} id={`i_colonne_${index}`} onChange={(e) => handleSelectChangeAnnee(e, index)} value={inputSet.selectedOptionAnnee || ''}>
+                                                <option value="">Collection</option>
+                                                {optionsannee.map(option => (
+                                                    <option key={option.value} value={option.value}>
+                                                        {option.text}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className='texter-btn'>I</div>
+                                        </div>
+                                    </div>
+
+                                    <div className='flexing'>
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`type_${index}`}>Marque</label> */}
+                                            <select name={`Marque_${index}`} id={`j_colonne_${index}`} onChange={(e) => handleSelectChangeMarque(e, index)} value={inputSet.selectedOptionMarque || ''}>
+                                                <option value="">Marque</option>
+                                                {optionsmarque.map(option => (
+                                                    <option key={option.value} value={option.value}>
+                                                        {option.text}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className='texter-btn'>J</div>
+                                        </div>
+
+                                        <div className='container-input'>
+                                            {/* <label htmlFor={`type_${index}`}>Achat Fournisseur</label> */}
+                                            <select name={`achatfournisseur_${index}`} id={`p_colonne_${index}`} onChange={(e) => handleSelectChangeAchatFournisseur(e, index)} value={inputSet.selectedOptionAchatFournisseur || ''}>
+                                                <option value="">Select</option>
+                                                {optionsachatfournisseur.map(option => (
+                                                    <option key={option.value} value={option.achat_fournisseur}>
+                                                        {option.text}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <div className='texter-btn'>P</div>
+                                        </div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`type_${index}`}>Catégorie</label> */}
+                                        <select name={`Categorie_${index}`} id={`k_colonne_${index}`} onChange={(e) => handleSelectChangeCategorie(e, index)} value={inputSet.selectedOptionCategorie || ''}>
+                                            <option value="">Catégorie</option>
+                                            {optionscategorie.map(option => (
+                                                <option key={option.value} value={option.value}>
+                                                    {option.text}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <div className='texter-btn'>K</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`tarifaumodele_${index}`}>Tarif au Modèle</label> */}
-                                    <input
-                                        type="checkbox"
-                                        id={`o_colonne_${index}`}
-                                        onChange={handleCheckboxTarifAuModeleChange}
-                                        checked={tarifaumodele === "VRAI"}
-                                    />
-                                    <div className='texter-btn'>O</div>
-                                </div>
+
+
+                                <div className='box'>
+                                    <div>
+                                        <h3>Stocks</h3>
+                                        <p>Cochez <span>L</span> & <span>M</span> par défaut</p>
+                                    </div>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`commercialise_${index}`}>Commercialisé</label> */}
+                                        <input
+                                            type="checkbox"
+                                            id={`l_colonne_${index}`}
+                                            onChange={handleCheckboxChange}
+                                            checked={commercialise === "VRAI"}
+                                        />
+                                        <div className='texter-btn'>L</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`stocke_${index}`}>Stocké</label> */}
+                                        <input
+                                            type="checkbox"
+                                            id={`m_colonne_${index}`}
+                                            onChange={handleCheckboxStockChange}
+                                            checked={stocke === "VRAI"}
+                                        />
+                                        <div className='texter-btn'>M</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`divers_${index}`}>Divers</label> */}
+                                        <input
+                                            type="checkbox"
+                                            id={`n_colonne_${index}`}
+                                            onChange={handleCheckboxDiversChange}
+                                            checked={divers === "VRAI"}
+                                        />
+                                        <div className='texter-btn'>N</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`tarifaumodele_${index}`}>Tarif au Modèle</label> */}
+                                        <input
+                                            type="checkbox"
+                                            id={`o_colonne_${index}`}
+                                            onChange={handleCheckboxTarifAuModeleChange}
+                                            checked={tarifaumodele === "VRAI"}
+                                        />
+                                        <div className='texter-btn'>O</div>
+                                    </div>
                                 </div>
 
 
                                 <div className='box'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`prixachatht_${index}`}>Prix Achat HT</label> */}
-                                    <input type="text" id={`r_colonne_${index}`} placeholder='Prix Achat HT' />
-                                    <div className='texter-btn'>R</div>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`prixachatht_${index}`}>Prix Achat HT</label> */}
+                                        <input type="text" id={`r_colonne_${index}`} placeholder='Prix Achat HT' />
+                                        <div className='texter-btn'>R</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`remise_${index}`}>Remise</label> */}
+                                        <input type="text" id={`s_colonne_${index}`} placeholder='Remise' />
+                                        <div className='texter-btn'>S</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`prixventettc_${index}`}>Prix Vente TTC</label> */}
+                                        <input type="text" id={`t_colonne_${index}`} placeholder='Prix Vente TTC' />
+                                        <div className='texter-btn'>T</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`remise_${index}`}>Remise</label> */}
-                                    <input type="text" id={`s_colonne_${index}`} placeholder='Remise' />
-                                    <div className='texter-btn'>S</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`prixventettc_${index}`}>Prix Vente TTC</label> */}
-                                    <input type="text" id={`t_colonne_${index}`} placeholder='Prix Vente TTC' />
-                                    <div className='texter-btn'>T</div>
-                                </div>
-                                </div>
-
-
-                                <div className='box'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`grilletaille_${index}`}>Grille Taille</label> */}
-                                    <input type="text" id={`v_colonne_${index}`} placeholder='Grille Taille' />
-                                    <div className='texter-btn'>V</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`grillecouleur_${index}`}>Grille Couleur</label> */}
-                                    <input type="text" id={`w_colonne_${index}`} placeholder='Grille Couleur' />
-                                    <div className='texter-btn'>W</div>
-                                </div>
-
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`grillematiere_${index}`}>Grille Matière</label> */}
-                                    <input type="text" id={`x_colonne_${index}`} placeholder='Grille Matière' />
-                                    <div className='texter-btn'>X</div>
-                                </div>
-                                </div>
 
                                 <div className='box'>
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
-                                    <input type="text" id={`u_colonne_${index}`} placeholder='Méthode valorisation Stock' />
-                                    <div className='texter-btn'>U</div>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`grilletaille_${index}`}>Grille Taille</label> */}
+                                        <input type="text" id={`v_colonne_${index}`} placeholder='Grille Taille' />
+                                        <div className='texter-btn'>V</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`grillecouleur_${index}`}>Grille Couleur</label> */}
+                                        <input type="text" id={`w_colonne_${index}`} placeholder='Grille Couleur' />
+                                        <div className='texter-btn'>W</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`grillematiere_${index}`}>Grille Matière</label> */}
+                                        <input type="text" id={`x_colonne_${index}`} placeholder='Grille Matière' />
+                                        <div className='texter-btn'>X</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`ecategorieclubs1_${index}`}>e_catégorie_clubs_1</label> */}
-                                    <input type="text" id={`y_colonne_${index}`} placeholder='E-catégorie_clubs_1' />
-                                    <div className='texter-btn'>Y</div>
+                                <div className='box'>
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
+                                        <input type="text" id={`u_colonne_${index}`} placeholder='Méthode valorisation Stock' />
+                                        <div className='texter-btn'>U</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`ecategorieclubs1_${index}`}>e_catégorie_clubs_1</label> */}
+                                        <input type="text" id={`y_colonne_${index}`} placeholder='E-catégorie_clubs_1' />
+                                        <div className='texter-btn'>Y</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`ecategorieclubspardefaut_${index}`}>e_catégorie clubs par défaut</label> */}
+                                        <input type="text" id={`z_colonne_${index}`} placeholder='E-Catégorie_clubs_par_défaut' />
+                                        <div className='texter-btn'>Z</div>
+                                    </div>
+
+                                    <div className='container-input'>
+                                        {/* <label htmlFor={`prixconseille_${index}`}>Prix conseillé</label> */}
+                                        <input type="text" id={`aa_colonne_${index}`} placeholder='Prix Conseillé' />
+                                        <div className='texter-btn'>AA</div>
+                                    </div>
                                 </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`ecategorieclubspardefaut_${index}`}>e_catégorie clubs par défaut</label> */}
-                                    <input type="text" id={`z_colonne_${index}`} placeholder='E-Catégorie_clubs_par_défaut' />
-                                    <div className='texter-btn'>Z</div>
-                                </div>
 
-                                <div className='container-input'>
-                                    {/* <label htmlFor={`prixconseille_${index}`}>Prix conseillé</label> */}
-                                    <input type="text" id={`aa_colonne_${index}`} placeholder='Prix Conseillé' />
-                                    <div className='texter-btn'>AA</div>
-                                </div>
-                                </div>
-
-                                
                             </>
                         )}
 
