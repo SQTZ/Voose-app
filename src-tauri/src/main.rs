@@ -5,9 +5,16 @@ use tauri::command;
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![create_csv_on_desktop])
+        .invoke_handler(tauri::generate_handler![create_csv_on_desktop, read_json_file])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+#[tauri::command]
+fn read_json_file(fileName: String) -> Result<String, String> {
+    let path = format!("../public/json/{}.json", fileName);
+    std::fs::read_to_string(path)
+        .map_err(|e| e.to_string())
 }
 
 
@@ -105,6 +112,10 @@ fn create_csv_on_desktop(data: Vec<InputData>, nameFile: String) -> Result<(), S
     // Écrire chaque ensemble de données dans le fichier CSV
     for input_data in data {
         // Utilisez input_data.colonneA et input_data.colonneB directement
+        /*if wtr.write_record(&[input_data.colonneA, input_data.colonneB, input_data.colonneC, input_data.colonneD, input_data.colonneE, input_data.colonneF, input_data.colonneG, input_data.colonneH, input_data.colonneI, input_data.colonneJ, input_data.colonneK, input_data.colonneL, input_data.colonneM, input_data.colonneN, input_data.colonneO, input_data.colonneP, input_data.colonneQ, input_data.colonneR, input_data.colonneS, input_data.colonneT, input_data.colonneU, input_data.colonneV, input_data.colonneW, input_data.colonneX, input_data.colonneY, input_data.colonneZ, input_data.colonneAA, input_data.colonneAB]).is_err() {
+            return Err("Erreur lors de l'écriture dans le fichier CSV".to_string());
+        }*/
+
         if wtr.write_record(&[input_data.colonneA, input_data.colonneB, input_data.colonneC, input_data.colonneD, input_data.colonneE, input_data.colonneF, input_data.colonneG, input_data.colonneH, input_data.colonneI, input_data.colonneJ, input_data.colonneK, input_data.colonneL, input_data.colonneM, input_data.colonneN, input_data.colonneO, input_data.colonneP, input_data.colonneQ, input_data.colonneR, input_data.colonneS, input_data.colonneT, input_data.colonneU, input_data.colonneV, input_data.colonneW, input_data.colonneX, input_data.colonneY, input_data.colonneZ, input_data.colonneAA, input_data.colonneAB]).is_err() {
             return Err("Erreur lors de l'écriture dans le fichier CSV".to_string());
         }

@@ -61,6 +61,10 @@ import optionsmarque from '../json/optionmarque.json';
 import optionsachatfournisseur from '../json/optionmarque.json';
 import optionscategorie from '../json/optioncategorie.json';
 import 'typeface-montserrat';
+import { event } from '@tauri-apps/api';
+import { availableMonitors } from '@tauri-apps/api/window';
+import { transformCallback } from '@tauri-apps/api/tauri';
+import SelectionDPtest from './selectiontest';
 
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
@@ -187,10 +191,17 @@ function SelectionDP() {
     };
 
 
-
     // Ajouter un nouvel ensemble d'inputs
     const addInputSet = () => {
         setInputSets([...inputSets, {}]);
+    };
+
+    const duplicateInputSet = (index) => {
+        // Trouver l'ensemble d'inputs à dupliquer
+        const inputSetToDuplicate = inputSets[index];
+
+        // Ajouter cet ensemble d'inputs dupliqué à l'état
+        setInputSets([...inputSets, { ...inputSetToDuplicate }]);
     };
 
     // Suprimer un ensemble d'inputs
@@ -199,7 +210,6 @@ function SelectionDP() {
         const newInputSets = inputSets.filter((_, i) => i !== index);
         setInputSets(newInputSets);
     };
-
 
     return (
         <div>
@@ -234,18 +244,30 @@ function SelectionDP() {
             <form>
                 {inputSets.map((inputSet, index) => (
                     <div key={index} className='block-inputs'>
-                        {inputSets.length > 1 && (
-                            <button type="button" onClick={() => removeInputSet(index)}>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70D8C1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <div className='vertical-btn'>
+                            {inputSets.length > 1 && (
+                                <button type="button" onClick={() => removeInputSet(index)}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70D8C1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M4 7l16 0" />
+                                        <path d="M10 11l0 6" />
+                                        <path d="M14 11l0 6" />
+                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                    </svg>
+                                </button>
+
+                            )}
+
+                            <button type="button" onClick={() => duplicateInputSet(index)}>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-files" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70D8C1" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M4 7l16 0" />
-                                    <path d="M10 11l0 6" />
-                                    <path d="M14 11l0 6" />
-                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                    <path d="M15 3v4a1 1 0 0 0 1 1h4" />
+                                    <path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" />
+                                    <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
                                 </svg>
                             </button>
-                        )}
+                        </div>
 
 
 
@@ -287,14 +309,14 @@ function SelectionDP() {
                                 </div>
 
                                 <div className='box'>
+                                    <SelectionDPtest />
+                                    {/*
                                     <div className='container-input'>
-                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
                                         <input type="text" id={`e_colonne_${index}`} placeholder='Taille' />
                                         <div className='texter-btn'>E</div>
                                     </div>
 
                                     <div className='container-input'>
-                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
                                         <input type="text" id={`f_colonne_${index}`} placeholder='Couleur' />
                                         <div className='texter-btn'>F</div>
                                     </div>
@@ -310,10 +332,10 @@ function SelectionDP() {
                                     </div>
 
                                     <div className='container-input'>
-                                        {/* <label htmlFor={`e_${index}`}>Désignation</label> */}
                                         <input type="text" id={`i_colonne_${index}`} placeholder='Matière' />
                                         <div className='texter-btn'>I</div>
                                     </div>
+                                     */}
                                 </div>
 
                                 <div className='container-input blocked'>
@@ -401,7 +423,7 @@ function SelectionDP() {
                                     </div>
 
 
-                                    <div className='container-input'>
+                                    <div className='container-input blocked'>
                                         {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
                                         <input type="text" id={`u_colonne_${index}`} value={"Prix moyen pondéré d'achat"} />
                                         <div className='texter-btn'>U</div>
@@ -702,7 +724,7 @@ function SelectionDP() {
                                 </div>
 
                                 <div className='box'>
-                                    <div className='container-input'>
+                                    <div className='container-input blocked'>
                                         {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
                                         <input type="text" id={`u_colonne_${index}`} placeholder='Méthode valorisation Stock' />
                                         <div className='texter-btn'>U</div>
@@ -748,3 +770,5 @@ function SelectionDP() {
 }
 
 export default SelectionDP;
+
+

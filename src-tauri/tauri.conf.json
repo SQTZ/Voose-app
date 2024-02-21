@@ -17,6 +17,10 @@
         "open": true
       },
       "fs": {
+        "all": true,
+        "scope": ["$PUBLIC/*"]
+      },
+      "path": {
         "all": true
       }
     },
