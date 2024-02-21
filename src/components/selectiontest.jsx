@@ -79,8 +79,9 @@ function SelectionDPtest() {
                         <div key={group.type}>
                             <h3>{group.type}</h3>
                             {group.options.map(option => (
-                                <div key={option.code}>
+                                <div key={option.code} className='option'>
                                     <input
+                                    className='checkbox-input'
                                         type="checkbox"
                                         id={option.code}
                                         checked={checkedOptions[group.type].includes(option.code)}

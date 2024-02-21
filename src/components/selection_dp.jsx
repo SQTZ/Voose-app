@@ -213,7 +213,7 @@ function SelectionDP() {
 
     return (
         <div>
-            <div className='flexing'>
+            <div className='flexing2'>
                 <div className='container-text'>
                     <div>
                         <a href='/'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -230,7 +230,7 @@ function SelectionDP() {
 
                 <div>
                     <form>
-                        <div className='flexing'>
+                        <div className='flexing2'>
                             <input type="text" id="name_file" placeholder='Nom de votre fichier'></input>
                             <div className='box-export'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-export" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -402,7 +402,6 @@ function SelectionDP() {
 
 
                                 <div className='box'>
-                                    <div className='flexing'>
                                         <div className='container-input'>
                                             {/* <label htmlFor={`prixachatht_${index}`}>Prix Achat HT</label> */}
                                             <input type="text" id={`r_colonne_${index}`} placeholder='Prix Achat HT' />
@@ -420,7 +419,6 @@ function SelectionDP() {
                                             <input type="text" id={`t_colonne_${index}`} placeholder='Prix Vente TTC' />
                                             <div className='texter-btn'>T</div>
                                         </div>
-                                    </div>
 
 
                                     <div className='container-input blocked'>
@@ -639,6 +637,7 @@ function SelectionDP() {
                                     <div className='container-input'>
                                         {/* <label htmlFor={`commercialise_${index}`}>Commercialisé</label> */}
                                         <input
+                                        className='checkbox-input'
                                             type="checkbox"
                                             id={`l_colonne_${index}`}
                                             onChange={handleCheckboxChange}
@@ -650,6 +649,7 @@ function SelectionDP() {
                                     <div className='container-input'>
                                         {/* <label htmlFor={`stocke_${index}`}>Stocké</label> */}
                                         <input
+                                        className='checkbox-input'
                                             type="checkbox"
                                             id={`m_colonne_${index}`}
                                             onChange={handleCheckboxStockChange}
@@ -661,6 +661,7 @@ function SelectionDP() {
                                     <div className='container-input'>
                                         {/* <label htmlFor={`divers_${index}`}>Divers</label> */}
                                         <input
+                                        className='checkbox-input'
                                             type="checkbox"
                                             id={`n_colonne_${index}`}
                                             onChange={handleCheckboxDiversChange}
@@ -672,6 +673,7 @@ function SelectionDP() {
                                     <div className='container-input'>
                                         {/* <label htmlFor={`tarifaumodele_${index}`}>Tarif au Modèle</label> */}
                                         <input
+                                        className='checkbox-input'
                                             type="checkbox"
                                             id={`o_colonne_${index}`}
                                             onChange={handleCheckboxTarifAuModeleChange}

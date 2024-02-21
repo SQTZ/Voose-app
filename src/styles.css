@@ -132,13 +132,16 @@ form select {
     width: 100%;
 }
 
-.box .flexing {
-    display: flex;
+.flexing {  
     justify-content: space-between;
-    gap: 20px;
+    align-items: center;
 }
 
-.flexing {
+.container-input select {
+    width: 100%;
+}
+
+.flexing2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,12 +166,6 @@ h1 {
     font-family: Montserrat;
     margin: 0;
 }
-
-.box input {
-    width: 100%;
-}
-
-
 
 span {
     color: #3C3C53;
@@ -244,4 +241,77 @@ span {
 .items-end {
     margin-bottom: 20px;
     font-family: Montserrat;
+}
+
+/* Style de base pour le popup */
+.popup {
+    background-color: #11111e;
+    border: 1px solid #70d8c1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Titre pour chaque groupe (Taille, Couleur, Matière) */
+.popup h3 {
+    color: #70d8c1;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #70d8c1;
+}
+
+/* Conteneur pour chaque option */
+.popup .option{
+    display: flex;
+    font-family: Montserrat;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Style pour les labels pour améliorer la lisibilité */
+.popup label {
+    margin-left: 10px;
+    font-weight: normal;
+    color: white;
+    width: 100%;
+}
+
+.checkbox-input {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #70d8c1;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Bouton de fermeture du popup */
+.popup button {
+    background-color: #70d8c1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    float: right;
+}
+
+.popup button:hover {
+    background-color: #78F4CE;
+}
+
+/* Clearfix pour le flottant */
+.popup::after {
+    content: "";
+    display: table;
+    clear: both;
 }
