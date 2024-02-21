@@ -9,7 +9,7 @@ function App() {
   return (
     <div className='dashboard-container'>
             <div className='left-box'>
-                <img src="./assets/react.svg" alt="dz" />
+                <img src="iconvoose.png" alt="dz" />
 
                 <div className='items-center'>
                     <Link to="/create" className='link-btn'>

@@ -1,6 +1,7 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+use tauri::api::file;
 use tauri::command;
 
 fn main() {
@@ -12,10 +13,12 @@ fn main() {
 
 #[tauri::command]
 fn read_json_file(fileName: String) -> Result<String, String> {
-    let path = format!("../src/json/{}.json", fileName);
+    let path = format!("json/{}.json", fileName);
     std::fs::read_to_string(path)
         .map_err(|e| e.to_string())
 }
+
+
 
 
 /*
