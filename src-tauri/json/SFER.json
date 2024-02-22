@@ -1,0 +1,14 @@
+[
+    {
+      "type": "taille",
+      "options": [{"code": "5FERS", "libellé": "6 - PW (5 fers)"}, {"code": "7FBIS", "libellé": "5 - PW/SW (7FERS)"}, {"code": "6FBIS", "libellé":"6 - PW/SW (6 fers)"}, {"code": "6FERS", "libellé": "5 - PW (6 fers)"}, {"code": "6GW", "libellé": "6 - PW/GW (6 fers)"}, {"code": "6AW", "libellé": "6 - PW/AW (6 fers)"}, {"code": "7FERS", "libellé": "4 - PW (7 Fers)"}]
+    },
+    {
+        "type": "couleur",
+        "options": [{"code": "F01", "libellé": "Flex Lady"}, {"code": "F03", "libellé": "Flex Regular"}, {"code": "F04", "libellé": "Flex Stiff"}, {"code": "F05", "libellé": "Flex X Stiff"},  {"code": "F06", "libellé": "Flex Lite"}, {"code": "F07", "libellé": "Flex A (senior)"}]
+      },
+      {
+        "type": "matière",
+        "options": [{"code": "DROIT", "libellé": "Droitier"}, {"code": "GAUCH", "libellé": "Gaucher"}]
+      }
+  ]

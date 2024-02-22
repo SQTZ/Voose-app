@@ -1,0 +1,14 @@
+[
+    {
+      "type": "taille",
+      "options": [{"code": "F02", "libellé": "Bois 03 +"}, {"code": "F03", "libellé": "Bois 03"}, {"code": "FHL3", "libellé":"Bois 3HL"}, {"code": "F04", "libellé": "Bois 04"}, {"code": "F05", "libellé": "Bois 05"}, {"code": "F07", "libellé": "Bois 07"}, {"code": "F09", "libellé": "Bois 09"}, {"code": "F11", "libellé": "Bois 11"}]
+    },
+    {
+        "type": "couleur",
+        "options": [{"code": "F01", "libellé": "Flex Lady"}, {"code": "F03", "libellé": "Flex Regular"}, {"code": "F04", "libellé": "Flex Stiff"}, {"code": "F05", "libellé": "Flex X Stiff"},  {"code": "F06", "libellé": "Flex Lite"}, {"code": "F07", "libellé": "Flex A (senior)"}]
+      },
+      {
+        "type": "matière",
+        "options": [{"code": "DROIT", "libellé": "Droitier"}, {"code": "GAUCH", "libellé": "Gaucher"}]
+      }
+  ]

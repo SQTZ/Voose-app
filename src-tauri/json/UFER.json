@@ -1,0 +1,14 @@
+[
+    {
+      "type": "taille",
+      "options": [{"code": "I03", "libellé": "Fer 3"}, {"code": "I04", "libellé": "Fer 4"}, {"code": "I05", "libellé":"Fer 5"}, {"code": "I06", "libellé": "Fer 6"}, {"code": "I07", "libellé": "Fer 7"}, {"code": "I08", "libellé": "Fer 8"}, {"code": "I09", "libellé": "Fer 9"}, {"code": "IPW", "libellé": "Fer PW"}, {"code": "IGW", "libellé": "Fer GW"}, {"code": "IAW", "libellé": "Fer AW"}, {"code": "ISW", "libellé": "Fer SW"}]
+    },
+    {
+        "type": "couleur",
+        "options": [{"code": "F01", "libellé": "Flex Lady"}, {"code": "F03", "libellé": "Flex Regular"}, {"code": "F04", "libellé": "Flex Stiff"}, {"code": "F05", "libellé": "Flex X Stiff"},  {"code": "F06", "libellé": "Flex Lite"}, {"code": "F07", "libellé": "Flex A (senior)"}]
+      },
+      {
+        "type": "matière",
+        "options": [{"code": "DROIT", "libellé": "Droitier"}, {"code": "GAUCH", "libellé": "Gaucher"}]
+      }
+  ]

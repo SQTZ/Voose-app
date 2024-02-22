@@ -25,7 +25,7 @@ function App() {
                     <Link to="/createtest" className='link-btn'>Aller sur la Création</Link>
                 </div>
 
-                <span className='items-end'>V.0.0.1</span>
+                <span className='items-end'>V.0.0.3</span>
             </div>
             {/* Ajoutez ici le contenu principal du dashboard à droite */}
             <div className="container">

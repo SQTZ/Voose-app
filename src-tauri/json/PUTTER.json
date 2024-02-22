@@ -1,0 +1,14 @@
+[
+    {
+      "type": "taille",
+      "options": [{"code": "32'", "libellé": "32 inch"}, {"code": "33'", "libellé": "33 inch"}, {"code": "34'", "libellé":"34 inch"}, {"code": "35'", "libellé": "35 inch"}, {"code": "38'", "libellé": "38 inch"}, {"code": "40'", "libellé": "40 inch"}, {"code": "42'", "libellé": "42 inch"}, {"code": "48'", "libellé": "48 inch"}]
+    },
+    {
+        "type": "couleur",
+        "options": [{}]
+      },
+      {
+        "type": "matière",
+        "options": [{"code": "DROIT", "libellé": "Droitier"}, {"code": "GAUCH", "libellé": "Gaucher"}]
+      }
+  ]

@@ -75,25 +75,26 @@ function SelectionDPtest() {
             {/* Popup pour la sélection des options */}
             {showPopup && (
                 <div className='popup'>
-                    {jsonContent.map(group => (
-                        <div key={group.type}>
-                            <h3>{group.type}</h3>
-                            {group.options.map(option => (
-                                <div key={option.code} className='option'>
-                                    <input
-                                    className='checkbox-input'
-                                        type="checkbox"
-                                        id={option.code}
-                                        checked={checkedOptions[group.type].includes(option.code)}
-                                        onChange={() => handleCheckboxChange(group.type, option.code)}
-                                    />
-                                    <label htmlFor={option.code}>{option.libellé}</label>
-                                </div>
-                            ))}
-                        </div>
+                {jsonContent.map(group => (
+                  <div key={group.type} className={group.options.length > 5 ? 'popup-content' : ''}>
+                    <h3>{group.type}</h3>
+                    {group.options.map(option => (
+                      <div key={option.code} className='option'>
+                        <input
+                          className='checkbox-input'
+                          type="checkbox"
+                          id={option.code}
+                          checked={checkedOptions[group.type].includes(option.code)}
+                          onChange={() => handleCheckboxChange(group.type, option.code)}
+                        />
+                        <label htmlFor={option.code}>{option.libellé}</label>
+                      </div>
                     ))}
-                    <button onClick={handleClosePopup}>Fermer</button>
-                </div>
+                  </div>
+                ))}
+                <button onClick={handleClosePopup}>Fermer</button>
+              </div>
+              
             )}
 
             {/* Affichage des déclinaisons générées avec option de suppression */}

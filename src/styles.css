@@ -315,3 +315,9 @@ span {
     display: table;
     clear: both;
 }
+
+.popup-content {
+    max-height: 300px; /* Ajustez cette valeur en fonction de la taille de ligne et du nombre de lignes souhaité */
+    overflow-y: auto; /* Applique une barre de défilement si le contenu dépasse la hauteur max */
+  }
+  

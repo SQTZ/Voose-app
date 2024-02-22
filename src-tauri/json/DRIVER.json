@@ -1,0 +1,15 @@
+[
+    {
+      "type": "taille",
+      "options": [{"code": "750", "libellé": "Loft 07.5°"}, {"code": "80", "libellé": "Loft 08.0°"}, {"code": "85", "libellé": "Loft 08.5°"}, {"code": "90", "libellé":"Loft 09.0°"}, {"code": "95", "libellé": "Loft 09.5°"}, {"code": "100", "libellé": "Loft 10.0°"}, {"code": "105", "libellé": "Loft 10.5°"}, {"code": "110", "libellé": "Loft 11.0°"}, {"code": "115", "libellé": "Loft 11.5°"}, {"code": "120", "libellé": "Loft 12.0°"}, {"code": "125", "libellé": "Loft 12.5°"}, {"code": "130", "libellé": "Loft 13.0°"}, {"code": "135", "libellé": "Loft 13.5°"}, {"code": "140", "libellé": "Loft 14.0°"}, {"code": "150", "libellé": "Loft 15.0°"}, {"code": "155", "libellé": "Loft 15.5°"}, {"code": "160", "libellé": "Loft 16.0°"}, {"code": "165", "libellé": "Loft 16.5°"}, {"code": "170", "libellé": "Loft 17.0°"}, {"code": "180", "libellé": "Loft 18.0°"}, {"code": "180,5", "libellé": "Loft 18.5°"}, {"code": "181", "libellé": "Loft 19.0°"}, {"code": "200", "libellé": "Loft 20.0°"}, {"code": "205", "libellé": "Loft 20.5°"}, {"code": "183", "libellé": "Loft 21.0°"}, {"code": "183.5", "libellé": "Loft 21.5°"}, {"code": "184", "libellé": "Loft 22.0°"}, {"code": "185", "libellé": "Loft 23.0°"}, {"code": "185,5", "libellé": "Loft 23.5°"}, {"code": "186", "libellé": "Loft 24.0°"}, {"code": "187", "libellé": "Loft 25.0°"}, {"code": "188", "libellé": "Loft 26.0°"}, {"code": "189", "libellé": "Loft 27.0°"}, {"code": "190", "libellé": "Loft 28.0°"}, {"code": "191", "libellé": "Loft 29.0°"}, {"code": "192", "libellé": "Loft 30.0°"}, {"code": "196", "libellé": "Loft 31.0°"}, {"code": "302", "libellé": "Loft 33.0°"}, {"code": "WT50", "libellé": "Loft 50°"}, {"code": "WT52", "libellé": "Loft 52°"}, {"code": "WT54", "libellé": "Loft 54°"}, {"code": "WT56", "libellé": "Loft 56°"}, {"code": "WT58", "libellé": "Loft 58°"}, {"code": "WT60", "libellé": "Loft 60°"}, {"code": "WT62", "libellé": "Loft 62°"}]
+    },
+    {
+      "type": "couleur",
+      "options": [{"code": "F01", "libellé": "Flex Lady"}, {"code": "F03", "libellé": "Flex Regular"}, {"code": "F04", "libellé": "Flex Stiff"}, {"code": "F05", "libellé": "Flex X Stiff"},  {"code": "F06", "libellé": "Flex Lite"}, {"code": "F07", "libellé": "Flex A (senior)"}]
+    },
+    {
+      "type": "matière",
+      "options": [{"code": "DROIT", "libellé": "Droitier"}, {"code": "GAUCH", "libellé": "Gaucher"}]
+    }
+  ]
+  

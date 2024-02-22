@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "Voose",
-    "version": "0.0.1"
+    "version": "0.0.3"
   },
   "tauri": {
     "allowlist": {
@@ -36,6 +36,12 @@
         "icons/icon.ico"
       ],
       "resources": [
+        "json/DRIVER.json",
+        "json/BOIS.json",
+        "json/HYBRIDE.json",
+        "json/UFER.json",
+        "json/SFER.json",
+        "json/PUTTER.json",
         "json/CHNIHOMME.json"
       ]
     },
@@ -48,7 +54,7 @@
         "resizable": true,
         "title": "Voose",
         "width": 1400,
-        "height": 600
+        "height": 800
       }
     ]
   }
