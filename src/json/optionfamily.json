@@ -6,27 +6,33 @@
     },
     {
       "text": "SACS",
-      "value": "SA"
+      "value": "SA",
+      "hashtag": "#SACS"
     },
     {
       "text": "CHARIOTS",
-      "value": "CR"
+      "value": "CR",
+      "hashtag": "#CHARIOTS"
     },
     {
       "text": "ACCESSOIRES",
-      "value": "AC"
+      "value": "AC",
+      "hashtag": "#ACCESSOIRES"
     },
     {
       "text": "VÊTEMENTS",
-      "value": "TX"
+      "value": "TX",
+      "hashtag": "#VÊTEMENTS"
     },
     {
       "text": "BALLES",
-      "value": "BA"
+      "value": "BA",
+      "hashtag": "#BALLES"
     },
     {
       "text": "CHAUSSURES",
-      "value": "CH"
+      "value": "CH",
+      "hashtag": "#CHAUSSURES"
     }
 
   ]
