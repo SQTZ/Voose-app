@@ -57,7 +57,9 @@ fn create_csv_on_desktop(colonneA: String, colonneB: String) -> Result<(), Strin
 use std::env::home_dir;
 use std::path::PathBuf;
 use std::fs::OpenOptions;
-use csv::Writer;
+use std::io::Write; // Ajoutez cette ligne pour importer le trait Write
+use csv::{WriterBuilder, Terminator};
+use serde::Deserialize;
 
 #[derive(serde::Deserialize)]
 struct InputData {
@@ -103,14 +105,21 @@ fn create_csv_on_desktop(data: Vec<InputData>, nameFile: String) -> Result<(), S
     desktop_path.push(nameFile + ".csv");
 
     // Ouvrir le fichier CSV en mode append
-    let file = OpenOptions::new()
+    let mut file = OpenOptions::new()
         .write(true)
         .create(true)
         .append(true)
         .open(&desktop_path)
         .map_err(|_| "Impossible de créer ou d'ouvrir le fichier CSV".to_string())?;
 
-    let mut wtr = Writer::from_writer(file);
+    // Écrire manuellement le BOM UTF-8
+    file.write_all(&[0xEF, 0xBB, 0xBF])
+        .map_err(|_| "Impossible d'écrire le BOM UTF-8".to_string())?;
+
+
+        let mut wtr = WriterBuilder::new()
+        .delimiter(b';') // Utilisez le point-virgule comme délimiteur
+        .from_writer(file);
 
     // Écrire chaque ensemble de données dans le fichier CSV
     for input_data in data {

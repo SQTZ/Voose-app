@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"; // Importez les
 import App from "./App";
 import Create from "./create";
 import Createtest from "./createcopy";
+import Soon from "./soon";
 
 import "./styles.css";
 
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/create" element={<Create />} />
         <Route path="/createtest" element={<Createtest />} />
+        <Route path="/soon" element={<Soon />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

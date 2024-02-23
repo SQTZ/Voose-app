@@ -1,7 +1,7 @@
-# Tauri + React
+# Voose
 
-This template should help get you started developing with Tauri and React in Vite.
+Voose est une solution adapté à la création de produits à la suite de l'erp XLSOFT.
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## Mais c'est quoi il sert ?
+
