@@ -1,11 +1,33 @@
 [
     {
       "text": "CLUBS",
-      "value": "CL"
+      "value": "CL",
+      "hashtag": "#CLUBS"
     },
     {
       "text": "SACS",
-      "value": "SACS"
+      "value": "SA"
+    },
+    {
+      "text": "CHARIOTS",
+      "value": "CR"
+    },
+    {
+      "text": "ACCESSOIRES",
+      "value": "AC"
+    },
+    {
+      "text": "VÊTEMENTS",
+      "value": "TX"
+    },
+    {
+      "text": "BALLES",
+      "value": "BA"
+    },
+    {
+      "text": "CHAUSSURES",
+      "value": "CH"
     }
+
   ]
   

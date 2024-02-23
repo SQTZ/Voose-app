@@ -173,6 +173,20 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
         const colonneAB = colonnesAB[index];
 
 
+
+        
+        // Gestions des remplacements de valeurs pour la colonne G
+        if (colonneG && colonneG.value === 'CR') {
+            colonneB.value = 'CH' + colonneB.value.substring(2)
+        }
+        else if (colonneG && colonneG.value === 'SANSC') {
+            colonneG.value = 'SC';
+            colonneB.value = 'CH' + colonneB.value.substring(5);
+        };
+
+
+
+
         // Vérifier si l'option DE est sélectionnée pour l'ensemble d'inputs courant
         const isDESelected = colonneA && colonneA.value === 'DE';
 

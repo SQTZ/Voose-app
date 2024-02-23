@@ -1,11 +1,180 @@
 [
     {
       "text": "DRIVER",
-      "value": "DR"
+      "value": "DR",
+      "hashtag": "#CLUBS"
     },
     {
       "text": "HYBRIDE",
       "value": "HY"
-    }
+    },
+    {
+      "text": "Bois de parcours",
+      "value": "FW"
+    },
+    {
+      "text": "Fer",
+      "value": "IR"
+    },
+    {
+      "text": "Série de fers",
+      "value": "IR_SERIE"
+    },
+    {
+      "text": "Putter",
+      "value": "PT"
+    },
+    {
+      "text": "Sac chariot",
+      "value": "SC"
+    },
+    {
+      "text": "Sac trépied",
+      "value": "ST"
+    },
+    {
+      "text": "Chariot électrique",
+      "value": "CE"
+    },
+    {
+      "text": "Chariot manuel",
+      "value": "CM"
+    },
+    {
+      "text": "Tee",
+      "value": "TE"
+    },
+    {
+      "text": "CHAUSSETTES",
+      "value": "CT"
+    },
+    {
+      "text": "ACCESSOIRES",
+      "value": "AC"
+    },
+    {
+      "text": "CASQUETTES & VISIERES",
+      "value": "CP"
+    },
+    {
+      "text": "CHAPEAUX, BOBS & BONNETS",
+      "value": "CP2"
+    },
+    {
+      "text": "GUÊTRES",
+      "value": "GU"
+    },
+    {
+      "text": "CEINTURES",
+      "value": "CE"
+    },
+    {
+      "text": "GANTS EN CUIR",
+      "value": "GANT_CUIR"
+    },
+    {
+      "text": "GANTS D'HIVER",
+      "value": "GANT_HIVER"
+    },
+    {
+      "text": "PAIRE DE MOUFLES",
+      "value": "GANT_MOUFLE"
+    },
+    {
+      "text": "GANTS DE PLUIE",
+      "value": "GANT_PLUIE"
+    },
+    {
+      "text": "GANTS EN SYNTHETIQUE",
+      "value": "GANT_SYNT"
+    }, 
+    {
+      "text": "Gant",
+      "value": "GA"
+    },
+    {
+      "text": "CRAMPONS",
+      "value": "CR"
+    },
+    {
+      "text": "SANS CRAMPONS",
+      "value": "SANSC"
+    },
+    {
+      "text": "ACCESOIRES DE CHAUSSURES",
+      "value": "ACS"
+    },
+    {
+      "text": "BAGAGERIE",
+      "value": "BAG"
+    },
+    {
+      "text": "SAC CHARIOT",
+      "value": "C"
+    },
+    {
+      "text": "SAC DE TRANSPORT",
+      "value": "TR"
+    },
+    {
+      "text": "SAC ETANCHE",
+      "value": "ET"
+    },
+    {
+      "text": "SAC PENCIL",
+      "value": "PE"
+    },
+    {
+      "text": "SAC TREPIEDS",
+      "value": "T"
+    },
+    {
+      "text": "CHARIOT MANUEL 2 ROUES",
+      "value": "M2"
+    },
+    {
+      "text": "CHARIOT MANUEL 3 ROUES",
+      "value": "M3"
+    },
+    {
+      "text": "CHARIOT ELECTRIQUE FREINS",
+      "value": "EF"
+    },
+    {
+      "text": "CHARIOT ELECTRIQUE SANS FREINS",
+      "value": "E"
+    },
+    {
+      "text": "CHARIOTS ELECTRIQUES GPS AVEC FREIN",
+      "value": "EFG"
+    },
+    {
+      "text": "CHARIOTS ELECTRIQUES GPS SANS FREIN",
+      "value": "EG"
+    },
+    {
+      "text": "ACCESSOIRES POUR CHARIOTS",
+      "value": "ACCH"
+    },
+   {
+    "text": "BALLES 2 PIECES",
+    "value": "2P"
+   },
+   {
+    "text": "BALLES 3 PIECES",
+    "value": "3P"
+   },
+   {
+    "text": "BALLES 4 PIECES ET +",
+    "value": "4P"
+   },
+   {
+    "text": "BALLES LOGOTEES",
+    "value": "BAL"
+   },
+   {
+    "text": "BALLES UNITE",
+    "value": "BAU"
+   } 
   ]
   

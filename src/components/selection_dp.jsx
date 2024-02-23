@@ -92,20 +92,22 @@ function SelectionDP() {
 
     const handleSelectChangeFamily = (event, index) => {
         const newInputSets = [...inputSets];
-        newInputSets[index].selectedOptionFamily = event.target.value;
+        const selectedValue = event.target.value;
+
+        // Trouver le hashtag correspondant dans optionsfamily
+        const selectedOption = optionsfamily.find(option => option.value === selectedValue);
+        const hashtag = selectedOption ? selectedOption.hashtag : '';
+
+        // Mettre à jour l'inputSet avec la famille sélectionnée et son hashtag
+        newInputSets[index].selectedOptionFamily = selectedValue;
+        newInputSets[index].familyHashtag = hashtag; // Stocker le hashtag pour filtrer les options de S-Famille
+
         setInputSets(newInputSets);
     };
 
+    // Gestion du changement de sélection pour S-Famille (Type de Produit)
     const handleSelectChangeTypeProduct = (event, index) => {
         const newInputSets = [...inputSets];
-        newInputSets[index].selectedOptionTypeProduct = event.target.value;
-
-        // Récupérer les valeurs actuelles
-        const annee = newInputSets[index].selectedOptionAnnee || '';
-        const marque = newInputSets[index].selectedOptionMarque || '';
-        const lastTwoDigits = annee.length > 2 ? annee.substring(annee.length - 2) : annee;
-
-        newInputSets[index].codeArticle = event.target.value + marque + lastTwoDigits;
         newInputSets[index].selectedOptionTypeProduct = event.target.value;
         setInputSets(newInputSets);
     };
@@ -530,31 +532,33 @@ function SelectionDP() {
 
                                 <div className='box'>
                                     <div className='flexing'>
-                                        <div className='container-input'>
-                                            {/* <label htmlFor={`type_${index}`}>Famille</label> */}
-                                            <select name={`Family_${index}`} id={`f_colonne_${index}`} onChange={(e) => handleSelectChangeFamily(e, index)} value={inputSet.selectedOptionFamily || ''}>
-                                                <option value="">Famille</option>
-                                                {optionsfamily.map(option => (
-                                                    <option key={option.value} value={option.value}>
-                                                        {option.text}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                            <div className='texter-btn'>F</div>
-                                        </div>
+                                    <div key={index} className='block-inputs'>
+                        {/* Sélecteur pour Famille */}
+                        <div className='container-input'>
+                            <select name={`Family_${index}`} id={`f_colonne_${index}`} onChange={(e) => handleSelectChangeFamily(e, index)} value={inputSet.selectedOptionFamily || ''}>
+                                <option value="">Famille</option>
+                                {optionsfamily.map(option => (
+                                    <option key={option.value} value={option.value}>
+                                        {option.text}
+                                    </option>
+                                ))}
+                            </select>
+                            <div className='texter-btn'>F</div>
+                        </div>
 
-                                        <div className='container-input'>
-                                            {/* <label htmlFor={`type_${index}`}>S-Famille</label> */}
-                                            <select name={`TypeProduct_${index}`} id={`g_colonne_${index}`} onChange={(e) => handleSelectChangeTypeProduct(e, index)} value={inputSet.selectedOptionTypeProduct || ''}>
-                                                <option value="">S-Famille</option>
-                                                {optionstypeproduct.map(option => (
-                                                    <option key={option.value} value={option.value}>
-                                                        {option.text}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                            <div className='texter-btn'>G</div>
-                                        </div>
+                        {/* Sélecteur pour S-Famille, filtré par hashtag de Famille */}
+                        <div className='container-input'>
+                            <select name={`TypeProduct_${index}`} id={`g_colonne_${index}`} onChange={(e) => handleSelectChangeTypeProduct(e, index)} value={inputSet.selectedOptionTypeProduct || ''}>
+                                <option value="">S-Famille</option>
+                                {optionstypeproduct.filter(option => option.hashtag === inputSet.familyHashtag).map(filteredOption => (
+                                    <option key={filteredOption.value} value={filteredOption.value}>
+                                        {filteredOption.text}
+                                    </option>
+                                ))}
+                            </select>
+                            <div className='texter-btn'>G</div>
+                        </div>
+                    </div>
                                     </div>
 
                                     <div className='flexing'>
@@ -774,3 +778,4 @@ function SelectionDP() {
 export default SelectionDP;
 
 
+    
