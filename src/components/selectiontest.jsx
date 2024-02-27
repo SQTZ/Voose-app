@@ -60,7 +60,7 @@ function SelectionDPtest() {
             {/* Section pour définir le fichier JSON */}
             <div>
                 <form>
-                    <div className='flexing'>
+                    <div className='flexing tester'>
                         <input
                             type="text"
                             id="inputName"

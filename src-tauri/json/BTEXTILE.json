@@ -1,0 +1,14 @@
+[
+    {
+      "type": "taille",
+      "options": [{"code": "W28S", "libellé": "W28"}, {"code": "W30S", "libellé": "W30"}, {"code": "W32S", "libellé": "W32"}, {"code": "W34S", "libellé": "W34"}, {"code": "W36S", "libellé": "W36"}, {"code": "W38S", "libellé": "W38"}, {"code": "W40S", "libellé": "W40"}, {"code": "W301", "libellé": "W30/L30"}, {"code": "W302", "libellé": "W30/32"}, {"code": "W303", "libellé": "W30/L34"}, {"code": "W321", "libellé": "W32/L32"}, {"code": "W322", "libellé": "W32/L34"}, {"code": "W341", "libellé": "W34/L32"}, {"code": "W342", "libellé": "W34/L34"}, {"code": "W361", "libellé": "W36/L32"}, {"code": "W362", "libellé": "W36/L34"}, {"code": "W381", "libellé": "W38/L32"}, {"code": "W382", "libellé": "W38/L34"}, {"code": "W401", "libellé": "W40/L30"}, {"code": "W402", "libellé": "W40/L32"}, {"code": "W403", "libellé": "W40/L34"}]
+    },
+    {
+        "type": "couleur",
+        "options": [{}]
+      },
+      {
+        "type": "matière",
+        "options": [{}]
+      }
+  ]

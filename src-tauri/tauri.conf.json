@@ -42,7 +42,9 @@
         "json/UFER.json",
         "json/SFER.json",
         "json/PUTTER.json",
-        "json/CHNIHOMME.json"
+        "json/CHNIHOMME.json",
+        "json/HTEXTILE.json",
+        "json/BTEXTILE.json"
       ]
     },
     "security": {

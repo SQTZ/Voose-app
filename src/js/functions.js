@@ -182,6 +182,26 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
         else if (colonneG && colonneG.value === 'SANSC') {
             colonneG.value = 'SC';
             colonneB.value = 'CH' + colonneB.value.substring(5);
+        } 
+        else if (colonneG && colonneG.value === 'BS2') {
+            colonneG.value = 'BS';
+            colonneB.value = 'TX' + colonneB.value.substring(3);
+        }
+        else if (colonneG && colonneG.value === 'SV2') {
+            colonneG.value = 'SV';
+            colonneB.value = 'TX' + colonneB.value.substring(3);
+        }
+        else if (colonneG && colonneG.value === 'PU2') {
+            colonneG.value = 'PU';
+            colonneB.value = 'TX' + colonneB.value.substring(3);
+        }
+        else if (colonneG && colonneG.value === 'JU2') {
+            colonneG.value = 'JU';
+            colonneB.value = 'TX' + colonneB.value.substring(3);
+        }
+        else if (colonneG && colonneG.value === 'VP2') {
+            colonneG.value = 'VP';
+            colonneB.value = 'TX' + colonneB.value.substring(3);
         };
 
 

@@ -134,27 +134,32 @@ function SelectionDP() {
     const handleSelectChangeMarque = (event, index) => {
         const newInputSets = [...inputSets];
         const selectedMarqueValue = event.target.value;
-
+    
         // Trouver l'objet correspondant dans optionsmarque
         const selectedMarqueObj = optionsmarque.find(option => option.value === selectedMarqueValue);
         const briefValue = selectedMarqueObj ? selectedMarqueObj.brief : '';
         const marqueText = selectedMarqueObj ? selectedMarqueObj.text : '';
-
+        const achatFournisseur = selectedMarqueObj ? selectedMarqueObj.achat_fournisseur : '';
+    
         // Mise à jour de la marque dans l'état
         newInputSets[index].selectedOptionMarque = event.target.value;
-
+    
         // Mise à jour du codeArticle
         const typeProduct = newInputSets[index].selectedOptionTypeProduct || '';
         const annee = newInputSets[index].selectedOptionAnnee || '';
         const lastTwoDigits = annee.length > 2 ? annee.substring(annee.length - 2) : annee;
         newInputSets[index].codeArticle = typeProduct + briefValue + lastTwoDigits;
-
+    
         // Préfixer la désignation avec le texte de la marque
         const currentDesignation = newInputSets[index].designation || '';
         newInputSets[index].designation = marqueText + " - " + currentDesignation;
-
+    
+        // Mettre à jour automatiquement le sélecteur "Achat Fournisseur" avec la valeur correspondante
+        newInputSets[index].selectedOptionAchatFournisseur = achatFournisseur;
+    
         setInputSets(newInputSets);
     };
+    
 
     const handleSelectChangeCategorie = (event, index) => {
         const newInputSets = [...inputSets];
@@ -186,11 +191,12 @@ function SelectionDP() {
         setTarifaumodele(e.target.checked ? "VRAI" : "FAUX");
     };
 
-    const handleSelectChangeAchatFournisseur = (event, index) => {
+    /*const handleSelectChangeAchatFournisseur = (event, index) => {
+        console.log(event.target.value);
         const newInputSets = [...inputSets];
         newInputSets[index].selectedOptionAchatFournisseur = event.target.value;
         setInputSets(newInputSets);
-    };
+    };*/
 
 
     // Ajouter un nouvel ensemble d'inputs
@@ -608,8 +614,8 @@ function SelectionDP() {
                                             <select name={`achatfournisseur_${index}`} id={`p_colonne_${index}`} onChange={(e) => handleSelectChangeAchatFournisseur(e, index)} value={inputSet.selectedOptionAchatFournisseur || ''}>
                                                 <option value="">Select</option>
                                                 {optionsachatfournisseur.map(option => (
-                                                    <option key={option.value} value={option.achat_fournisseur}>
-                                                        {option.text}
+                                                    <option key={option.id} value={option.achat_fournisseur}>
+                                                        {option.achat_fournisseur}
                                                     </option>
                                                 ))}
                                             </select>

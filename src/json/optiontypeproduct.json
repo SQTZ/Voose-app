@@ -1,223 +1,292 @@
 [
-    {
-      "text": "DRIVER",
-      "value": "DR",
-      "hashtag": "#CLUBS"
-    },
-    {
-      "text": "HYBRIDE",
-      "value": "HY",
-      "hashtag": "#CLUBS"
-    },
-    {
-      "text": "Bois de parcours",
-      "value": "FW",
-      "hashtag": "#CLUBS"
-    },
-    {
-      "text": "Fer",
-      "value": "IR",
-      "hashtag": "#CLUBS"
-    },
-    {
-      "text": "Série de fers",
-      "value": "IR_SERIE",
-      "hashtag": "#CLUBS"
-    },
-    {
-      "text": "Putter",
-      "value": "PT",
-      "hashtag": "#CLUBS"
-    },
-    {
-      "text": "Sac chariot",
-      "value": "SC",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "Sac trépied",
-      "value": "ST",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "Chariot électrique",
-      "value": "CE",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "Chariot manuel",
-      "value": "CM",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "Tee",
-      "value": "TE",
-      "hashtag": "#ACCESSOIRES"
-    },
-    {
-      "text": "CHAUSSETTES",
-      "value": "CT",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "ACCESSOIRES",
-      "value": "AC",
-      "hashtag": "#ACCESSOIRES"
-    },
-    {
-      "text": "CASQUETTES & VISIERES",
-      "value": "CP",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "CHAPEAUX, BOBS & BONNETS",
-      "value": "CP2",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "GUÊTRES",
-      "value": "GU",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "CEINTURES",
-      "value": "CE",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "GANTS EN CUIR",
-      "value": "GANT_CUIR",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "GANTS D'HIVER",
-      "value": "GANT_HIVER",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "PAIRE DE MOUFLES",
-      "value": "GANT_MOUFLE",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "GANTS DE PLUIE",
-      "value": "GANT_PLUIE",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "GANTS EN SYNTHETIQUE",
-      "value": "GANT_SYNT",
-      "hashtag": "#VÊTEMENTS"
-    }, 
-    {
-      "text": "Gant",
-      "value": "GA",
-      "hashtag": "#VÊTEMENTS"
-    },
-    {
-      "text": "CRAMPONS",
-      "value": "CR",
-      "hashtag": "#CHAUSSURES"
-    },
-    {
-      "text": "SANS CRAMPONS",
-      "value": "SANSC",
-      "hashtag": "#CHAUSSURES"
-    },
-    {
-      "text": "ACCESOIRES DE CHAUSSURES",
-      "value": "ACS",
-      "hashtag": "#CHAUSSURES"
-    },
-    {
-      "text": "BAGAGERIE",
-      "value": "BAG",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "SAC CHARIOT",
-      "value": "C",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "SAC DE TRANSPORT",
-      "value": "TR",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "SAC ETANCHE",
-      "value": "ET",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "SAC PENCIL",
-      "value": "PE",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "SAC TREPIEDS",
-      "value": "T",
-      "hashtag": "#SACS"
-    },
-    {
-      "text": "CHARIOT MANUEL 2 ROUES",
-      "value": "M2",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "CHARIOT MANUEL 3 ROUES",
-      "value": "M3",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "CHARIOT ELECTRIQUE FREINS",
-      "value": "EF",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "CHARIOT ELECTRIQUE SANS FREINS",
-      "value": "E",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "CHARIOTS ELECTRIQUES GPS AVEC FREIN",
-      "value": "EFG",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "CHARIOTS ELECTRIQUES GPS SANS FREIN",
-      "value": "EG",
-      "hashtag": "#CHARIOTS"
-    },
-    {
-      "text": "ACCESSOIRES POUR CHARIOTS",
-      "value": "ACCH",
-      "hashtag": "#CHARIOTS"
-    },
-   {
+  {
+    "text": "DRIVER",
+    "value": "DR",
+    "hashtag": "#CLUBS"
+  },
+  {
+    "text": "HYBRIDE",
+    "value": "HY",
+    "hashtag": "#CLUBS"
+  },
+  {
+    "text": "Bois de parcours",
+    "value": "FW",
+    "hashtag": "#CLUBS"
+  },
+  {
+    "text": "Fer",
+    "value": "IR",
+    "hashtag": "#CLUBS"
+  },
+  {
+    "text": "Série de fers",
+    "value": "IR_SERIE",
+    "hashtag": "#CLUBS"
+  },
+  {
+    "text": "Putter",
+    "value": "PT",
+    "hashtag": "#CLUBS"
+  },
+  {
+    "text": "Sac chariot",
+    "value": "SC",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "Sac trépied",
+    "value": "ST",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "Chariot électrique",
+    "value": "CE",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "Chariot manuel",
+    "value": "CM",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "Tee",
+    "value": "TE",
+    "hashtag": "#ACCESSOIRES"
+  },
+  {
+    "text": "CHAUSSETTES",
+    "value": "CT",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "ACCESSOIRES",
+    "value": "AC",
+    "hashtag": "#ACCESSOIRES"
+  },
+  {
+    "text": "CASQUETTES & VISIERES",
+    "value": "CP",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "CHAPEAUX, BOBS & BONNETS",
+    "value": "CP2",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "GUÊTRES",
+    "value": "GU",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "CEINTURES",
+    "value": "CE",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "GANTS EN CUIR",
+    "value": "GANT_CUIR",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "GANTS D'HIVER",
+    "value": "GANT_HIVER",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "PAIRE DE MOUFLES",
+    "value": "GANT_MOUFLE",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "GANTS DE PLUIE",
+    "value": "GANT_PLUIE",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "BERMUDA",
+    "value": "BS",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "COUPE-VENT",
+    "value": "CV",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "DOUDOUNE",
+    "value": "DO",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "JUPE",
+    "value": "JU",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "PANTALON DE PLUIE",
+    "value": "VP",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "PANTALON",
+    "value": "PA",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "POLO",
+    "value": "PO",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "PULL",
+    "value": "PU",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "ROBE",
+    "value": "JU2",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "SHORT",
+    "value": "BS2",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "SOUS VETEMENTS TECHNIQUES",
+    "value": "SV2",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "SWEAT",
+    "value": "PU2",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "TEXTIL LOGOTE",
+    "value": "TL",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "VESTE DE PLUIE",
+    "value": "VP2",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "GANTS EN SYNTHETIQUE",
+    "value": "GANT_SYNT",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "Gant",
+    "value": "GA",
+    "hashtag": "#VÊTEMENTS"
+  },
+  {
+    "text": "CRAMPONS",
+    "value": "CR",
+    "hashtag": "#CHAUSSURES"
+  },
+  {
+    "text": "SANS CRAMPONS",
+    "value": "SANSC",
+    "hashtag": "#CHAUSSURES"
+  },
+  {
+    "text": "ACCESOIRES DE CHAUSSURES",
+    "value": "ACS",
+    "hashtag": "#CHAUSSURES"
+  },
+  {
+    "text": "BAGAGERIE",
+    "value": "BAG",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "SAC CHARIOT",
+    "value": "C",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "SAC DE TRANSPORT",
+    "value": "TR",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "SAC ETANCHE",
+    "value": "ET",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "SAC PENCIL",
+    "value": "PE",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "SAC TREPIEDS",
+    "value": "T",
+    "hashtag": "#SACS"
+  },
+  {
+    "text": "CHARIOT MANUEL 2 ROUES",
+    "value": "M2",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "CHARIOT MANUEL 3 ROUES",
+    "value": "M3",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "CHARIOT ELECTRIQUE FREINS",
+    "value": "EF",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "CHARIOT ELECTRIQUE SANS FREINS",
+    "value": "E",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "CHARIOTS ELECTRIQUES GPS AVEC FREIN",
+    "value": "EFG",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "CHARIOTS ELECTRIQUES GPS SANS FREIN",
+    "value": "EG",
+    "hashtag": "#CHARIOTS"
+  },
+  {
+    "text": "ACCESSOIRES POUR CHARIOTS",
+    "value": "ACCH",
+    "hashtag": "#CHARIOTS"
+  },
+  {
     "text": "BALLES 2 PIECES",
     "value": "2P",
     "hashtag": "#BALLES"
-   },
-   {
+  },
+  {
     "text": "BALLES 3 PIECES",
     "value": "3P",
     "hashtag": "#BALLES"
-   },
-   {
+  },
+  {
     "text": "BALLES 4 PIECES ET +",
     "value": "4P",
     "hashtag": "#BALLES"
-   },
-   {
+  },
+  {
     "text": "BALLES LOGOTEES",
     "value": "BAL",
     "hashtag": "#BALLES"
-   },
-   {
+  },
+  {
     "text": "BALLES UNITE",
     "value": "BAU",
     "hashtag": "#BALLES"
-   } 
-  ]
-  
+  }
+]
