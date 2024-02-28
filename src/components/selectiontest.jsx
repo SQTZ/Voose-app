@@ -60,7 +60,7 @@ function SelectionDPtest() {
             {/* Section pour définir le fichier JSON */}
             <div>
                 <form>
-                    <div className='flexing tester'>
+                    <div className='container-input'>
                         <input
                             type="text"
                             id="inputName"
@@ -68,6 +68,13 @@ function SelectionDPtest() {
                             onChange={handleInputChange}
                             value={fileName}
                         />
+                        <div className='texter-btn-decli'><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-category" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 4h6v6h-6z" />
+  <path d="M14 4h6v6h-6z" />
+  <path d="M4 14h6v6h-6z" />
+  <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+</svg></div>
                     </div>
                 </form>
             </div>
@@ -75,26 +82,29 @@ function SelectionDPtest() {
             {/* Popup pour la sélection des options */}
             {showPopup && (
                 <div className='popup'>
-                {jsonContent.map(group => (
-                  <div key={group.type} className={group.options.length > 5 ? 'popup-content' : ''}>
-                    <h3>{group.type}</h3>
-                    {group.options.map(option => (
-                      <div key={option.code} className='option'>
-                        <input
-                          className='checkbox-input'
-                          type="checkbox"
-                          id={option.code}
-                          checked={checkedOptions[group.type].includes(option.code)}
-                          onChange={() => handleCheckboxChange(group.type, option.code)}
-                        />
-                        <label htmlFor={option.code}>{option.libellé}</label>
-                      </div>
+                    {jsonContent.map(group => (
+                        <>
+                            <h3>{group.type}</h3>
+                            <div key={group.type} className={group.options.length > 5 ? 'popup-content' : ''}>
+
+                                {group.options.map(option => (
+                                    <div key={option.code} className='option'>
+                                        <input
+                                            className='checkbox-input'
+                                            type="checkbox"
+                                            id={option.code}
+                                            checked={checkedOptions[group.type].includes(option.code)}
+                                            onChange={() => handleCheckboxChange(group.type, option.code)}
+                                        />
+                                        <label htmlFor={option.code}>{option.libellé}</label>
+                                    </div>
+                                ))}
+                            </div>
+                        </>
                     ))}
-                  </div>
-                ))}
-                <button onClick={handleClosePopup}>Fermer</button>
-              </div>
-              
+                    <button type='button' onClick={handleClosePopup}>Fermer</button>
+                </div>
+
             )}
 
             {/* Affichage des déclinaisons générées avec option de suppression */}
@@ -144,18 +154,18 @@ function SelectionDPtest() {
                         <input type="text" placeholder="Taille" value={combo.taille} id={`e_colonne_${index}`} readOnly />
                         <input type="text" placeholder="Couleur" value={combo.couleur} id={`f_colonne_${index}`} readOnly />
                         <input type="text" placeholder="Matière" value={combo.matière} id={`i_colonne_${index}`} readOnly />
-                    
-                    {/* Bouton de suppression */}
-                    <button onClick={(event) => handleDeleteCombination(event, index)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70D8C1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M4 7l16 0" />
-                                        <path d="M10 11l0 6" />
-                                        <path d="M14 11l0 6" />
-                                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                    </svg>
-                    </button>
+
+                        {/* Bouton de suppression */}
+                        <button type='button' onClick={(event) => handleDeleteCombination(event, index)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 7l16 0" />
+                                <path d="M10 11l0 6" />
+                                <path d="M14 11l0 6" />
+                                <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
 

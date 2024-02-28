@@ -6,7 +6,7 @@ use tauri::command;
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![create_csv_on_desktop, read_json_file])
+        .invoke_handler(tauri::generate_handler![create_csv_on_desktop, read_json_file, read_configjson_files, save_json_file])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
@@ -17,6 +17,55 @@ fn read_json_file(fileName: String) -> Result<String, String> {
     std::fs::read_to_string(path)
         .map_err(|e| e.to_string())
 }
+
+
+use tauri::{Window};
+use std::fs;
+use std::path::{Path, PathBuf};
+use std::ffi::OsStr;
+use serde::Serialize;
+
+#[derive(Serialize)]
+struct JsonFile {
+    name: String,
+    content: String,
+}
+
+#[tauri::command]
+fn read_configjson_files() -> Result<Vec<JsonFile>, String> {
+    let path = PathBuf::from("json/");
+
+    if !path.exists() || !path.is_dir() {
+        return Err("Le chemin spécifié n'existe pas ou n'est pas un dossier".to_string());
+    }
+
+    let mut files = Vec::new();
+
+    for entry in fs::read_dir(path).map_err(|e| e.to_string())? {
+        let entry = entry.map_err(|e| e.to_string())?;
+        let path = entry.path();
+        if path.is_file() && path.extension() == Some(OsStr::new("json")) {
+            let content = fs::read_to_string(&path).map_err(|e| e.to_string())?;
+            let name = path.file_stem().unwrap().to_str().unwrap().to_string();
+            files.push(JsonFile { name, content });
+        }
+    }
+
+    Ok(files)
+}
+
+#[tauri::command]
+fn save_json_file(file_name: String, content: String) -> Result<(), String> {
+    use std::fs::File;
+    use std::io::Write;
+    let path = format!("json/{}.json", file_name);
+
+    let mut file = File::create(path).map_err(|e| e.to_string())?;
+    file.write_all(content.as_bytes()).map_err(|e| e.to_string())?;
+
+    Ok(())
+}
+
 
 
 
@@ -55,11 +104,11 @@ fn create_csv_on_desktop(colonneA: String, colonneB: String) -> Result<(), Strin
 
 
 use std::env::home_dir;
-use std::path::PathBuf;
 use std::fs::OpenOptions;
 use std::io::Write; // Ajoutez cette ligne pour importer le trait Write
 use csv::{WriterBuilder, Terminator};
 use serde::Deserialize;
+
 
 #[derive(serde::Deserialize)]
 struct InputData {

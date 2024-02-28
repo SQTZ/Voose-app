@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "Voose",
-    "version": "0.0.3"
+    "version": "0.1.0"
   },
   "tauri": {
     "allowlist": {
@@ -42,7 +42,6 @@
         "json/UFER.json",
         "json/SFER.json",
         "json/PUTTER.json",
-        "json/CHNIHOMME.json",
         "json/HTEXTILE.json",
         "json/BTEXTILE.json"
       ]

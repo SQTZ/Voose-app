@@ -5,10 +5,10 @@
     },
     {
         "type": "couleur",
-        "options": [{}]
+        "options": []
       },
       {
         "type": "matière",
-        "options": [{}]
+        "options": []
       }
   ]

@@ -4,10 +4,9 @@ function Create() {
 
 
   return (
-    <div className="container">
-
+    <>
       <SelectedDP />
-    </div>
+    </>
   );
 }
 
