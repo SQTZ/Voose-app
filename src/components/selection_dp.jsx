@@ -69,7 +69,7 @@ import Navbar from './navbar';
 
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
-    const [inputSets, setInputSets] = useState([{}]);
+    const [inputSets, setInputSets] = useState([{ selectedOptionPRDE: 'PR' }]);
 
     // Gestion du changement de sélection pour chaque ensemble d'inputs
     const handleSelectChangePRDE = (event, index) => {
@@ -218,6 +218,17 @@ function SelectionDP() {
         // Filtrer l'ensemble d'inputs à supprimer
         const newInputSets = inputSets.filter((_, i) => i !== index);
         setInputSets(newInputSets);
+    };
+
+    // Fonction pour réinitialiser le formulaire
+    const resetForm = () => {
+        setInputSets([{ selectedOptionPRDE: 'PR' }]); // Réinitialise inputSets à un tableau avec un objet vide
+        // Réinitialiser les autres états ici, si nécessaire, par exemple :
+        setCommercialise("FAUX");
+        setStocke("FAUX");
+        setDivers("FAUX");
+        setTarifaumodele("FAUX");
+        // Ajoutez d'autres états à réinitialiser ici
     };
 
     return (
@@ -375,7 +386,7 @@ function SelectionDP() {
                                                 <input type="checkbox"
                                                     id={`l_colonne_${index}`}
                                                     onChange={handleCheckboxChange}
-                                                checked={commercialise === "VRAI"} />
+                                                    checked={commercialise === "VRAI"} />
                                                 <div class="toggler-slider">
                                                     <div class="toggler-knob"></div>
                                                 </div>
@@ -661,7 +672,7 @@ function SelectionDP() {
                                                 <input type="checkbox"
                                                     id={`l_colonne_${index}`}
                                                     onChange={handleCheckboxChange}
-                                                checked={commercialise === "VRAI"} />
+                                                    checked={commercialise === "VRAI"} />
                                                 <div class="toggler-slider">
                                                     <div class="toggler-knob"></div>
                                                 </div>
@@ -681,7 +692,7 @@ function SelectionDP() {
                                                 </div>
                                             </label>
                                             <div className='texter-btn'>M</div>
-                                            
+
                                         </div>
 
                                         <div className='container-input blocked'>
@@ -760,13 +771,13 @@ function SelectionDP() {
 
                                         <div className='container-input'>
                                             {/* <label htmlFor={`ecategorieclubs1_${index}`}>e_catégorie_clubs_1</label> */}
-                                            <input type="text" id={`y_colonne_${index}`} placeholder='E-catégorie_clubs_1' />
+                                            <input type="text" id={`y_colonne_${index}`} placeholder='E-catégorie_clubs_1' value={"6"} />
                                             <div className='texter-btn'>Y</div>
                                         </div>
 
                                         <div className='container-input'>
                                             {/* <label htmlFor={`ecategorieclubspardefaut_${index}`}>e_catégorie clubs par défaut</label> */}
-                                            <input type="text" id={`z_colonne_${index}`} placeholder='E-Catégorie_clubs_par_défaut' />
+                                            <input type="text" id={`z_colonne_${index}`} placeholder='E-Catégorie_clubs_par_défaut' value={"6"} />
                                             <div className='texter-btn'>Z</div>
                                         </div>
 
@@ -789,7 +800,19 @@ function SelectionDP() {
                     ))}
 
                     <div className='end-step'>
-                        <button type="button" className="btn-event" onClick={addInputSet}>Ajouter</button>
+                        <button type="button" className="btn-event" onClick={addInputSet}><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 5l0 14" />
+                            <path d="M5 12l14 0" />
+                        </svg></button>
+                        <button type="button" onClick={resetForm}><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M4 7l16 0" />
+                                            <path d="M10 11l0 6" />
+                                            <path d="M14 11l0 6" />
+                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                                        </svg></button>
                         {/* <button type="button" className="btn-event" onClick={(event) => SubmitToCSVtest(event)}>Créer</button> */}
                     </div>
                 </form>

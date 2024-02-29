@@ -48,7 +48,7 @@ function ChangeDeclinaison() {
     return (
         <>
         <h1>Changer mes déclinaisons</h1>
-        <p className='desc'>tet</p>
+        <p className='desc'>C'est ici que tout commence, alimentez vos grilles pour vos prochaines créations.</p>
         <div className='parent-settings'>
             {files.map((file, fileIndex) => (
                 <div key={fileIndex} className="file-block">
@@ -57,7 +57,7 @@ function ChangeDeclinaison() {
                         <div key={itemIndex}>
                             <h4>{item.type}</h4>
                             <ul className='option-list'>
-                                {item.options.slice(0, 5).map((option, optionIndex) => ( // S'assure que seulement les 5 premières options sont affichées
+                                {item.options.map((option, optionIndex) => ( // S'assure que seulement les 5 premières options sont affichées
                                     <li key={optionIndex}>{option.code} - {option.libellé} <button type='button' onClick={() => removeOption(fileIndex, itemIndex, optionIndex)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3C3C53" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />

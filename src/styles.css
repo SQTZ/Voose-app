@@ -429,6 +429,8 @@ h2 {
     list-style: none;
     padding: 0;
     margin-top: 10px;
+    overflow-y: scroll;
+    max-height: 200px;
 }
 
 .option-list li {
@@ -475,4 +477,43 @@ h2 {
 .file-block .settings-subtitle {
     color: var(--color-title-light);
     margin-top: 0;
+}
+
+.end-step button {
+    background-color: var(--color-title-dark);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.end-step {
+    display: flex;
+    gap: 10px;
+}
+
+.doc-container svg {
+    visibility: hidden;
+    margin-left: 8px; /* Adjust spacing as needed */
+}
+
+li .icon-doc {
+    visibility: hidden;
+}
+
+li:hover .icon-doc {
+    visibility: visible;
+}
+
+h2:hover svg {
+    visibility: visible;
+    opacity: 1;
+    padding-left: 30px;
+}
+
+.doc-content p {
+    margin: 0;
+    font-family: Montserrat;
+    color: var(--color-annotation);
+    padding-right: 20px;
 }

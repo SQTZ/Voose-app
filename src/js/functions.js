@@ -176,8 +176,9 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
 
         
         // Gestions des remplacements de valeurs pour la colonne G
-        if (colonneG && colonneG.value === 'CR') {
-            colonneB.value = 'CH' + colonneB.value.substring(2)
+        if (colonneG && colonneG.value === 'CP2') {
+            colonneG.value = 'CP2';
+            colonneB.value = 'CP' + colonneB.value.substring(4)
         }
         else if (colonneG && colonneG.value === 'SANSC') {
             colonneG.value = 'SC';
