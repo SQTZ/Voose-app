@@ -13,7 +13,7 @@ fn main() {
 
 #[tauri::command]
 fn read_json_file(fileName: String) -> Result<String, String> {
-    let path = format!("../src-tauri/json/{}.json", fileName);
+    let path = format!("json/{}.json", fileName);
     std::fs::read_to_string(path)
         .map_err(|e| e.to_string())
 }
