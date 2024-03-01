@@ -3,56 +3,108 @@
     "type": "taille",
     "options": [
       {
-        "code": "38",
+        "code": "380",
         "libellé": "Pointure 38"
       },
       {
-        "code": "39",
+        "code": "381",
+        "libellé": "Pointure 38.5"
+      },
+      {
+        "code": "390",
         "libellé": "Pointure 39"
       },
       {
-        "code": "40",
+        "code": "391",
+        "libellé": "Pointure 39.5"
+      },
+      {
+        "code": "400",
         "libellé": "Pointure 40"
       },
       {
-        "code": "41",
+        "code": "401",
+        "libellé": "Pointure 40.5"
+      },
+      {
+        "code": "410",
         "libellé": "Pointure 41"
       },
       {
-        "code": "42",
+        "code": "415",
+        "libellé": "Pointure 41.5"
+      },
+      {
+        "code": "420",
         "libellé": "Pointure 42"
       },
       {
-        "code": "43",
+        "code": "421",
+        "libellé": "Pointure 42.5"
+      },
+      {
+        "code": "430",
         "libellé": "Pointure 43"
       },
       {
-        "code": "44",
+        "code": "435",
+        "libellé": "Pointure 43.5"
+      },
+      {
+        "code": "440",
         "libellé": "Pointure 44"
       },
       {
-        "code": "45",
+        "code": "441",
+        "libellé": "Pointure 44.5"
+      },
+      {
+        "code": "450",
         "libellé": "Pointure 45"
       },
       {
-        "code": "46",
+        "code": "455",
+        "libellé": "Pointure 45.5"
+      },
+      {
+        "code": "460",
         "libellé": "Pointure 46"
       },
       {
-        "code": "47",
+        "code": "461",
+        "libellé": "Pointure 46.5"
+      },
+      {
+        "code": "470",
         "libellé": "Pointure 47"
       },
       {
-        "code": "48",
+        "code": "471",
+        "libellé": "Pointure 47.5"
+      },
+      {
+        "code": "480",
         "libellé": "Pointure 48"
       },
       {
-        "code": "49",
+        "code": "485",
+        "libellé": "Pointure 48.5"
+      },
+      {
+        "code": "490",
         "libellé": "Pointure 49"
       },
       {
-        "code": "50",
+        "code": "495",
+        "libellé": "Pointure 49.5"
+      },
+      {
+        "code": "500",
         "libellé": "Pointure 50"
+      },
+      {
+        "code": "505",
+        "libellé": "Pointure 50.5"
       }
     ]
   },
@@ -60,11 +112,11 @@
     "type": "couleur",
     "options": [
       {
-        "code": "W",
+        "code": "LWI",
         "libellé": "Wide"
       },
       {
-        "code": "M",
+        "code": "LME",
         "libellé": "Medium"
       }
     ]

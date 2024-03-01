@@ -70,6 +70,18 @@ import Navbar from './navbar';
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
     const [inputSets, setInputSets] = useState([{ selectedOptionPRDE: 'PR' }]);
+    
+    const [data, setData] = useState(null);
+
+  useEffect(() => {
+    invoke('read_configjson_files') // Assurez-vous que le nom de la commande correspond à votre backend Rust
+      .then((jsonFiles) => {
+        // Traitez les fichiers JSON reçus, par exemple :
+        console.log(jsonFiles);
+        setData(jsonFiles);
+      })
+      .catch((error) => console.error('Erreur lors de la lecture des fichiers JSON:', error));
+  }, []);
 
     // Gestion du changement de sélection pour chaque ensemble d'inputs
     const handleSelectChangePRDE = (event, index) => {
