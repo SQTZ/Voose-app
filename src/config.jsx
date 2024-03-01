@@ -29,8 +29,8 @@ function Config() {
             <Link to="/"><img src="iconvoose.png" alt="Voose icon" /></Link>
 
             <div className='settings-navbar'>
-            <div className='link-btn-settings' onClick={() => handleComponentChange('ChangeDeclinaison')}><p>Changer mes déclinaisons</p></div>
-            <div className='link-btn-settings' onClick={() => handleComponentChange('default')}><p>config</p></div>
+            <div className='link-btn-settings' onClick={() => handleComponentChange('ChangeDeclinaison')}><p>Déclinaisons</p></div>
+            <div className='link-btn-settings' onClick={() => handleComponentChange('default')}><p>Fournisseurs</p></div>
             <div className='link-btn-settings' onClick={() => handleComponentChange('default')}><p>config</p></div>
             <div className='link-btn-settings' onClick={() => handleComponentChange('default')}><p>config</p></div>
             <div className='link-btn-settings' onClick={() => handleComponentChange('default')}><p>A propos</p></div>

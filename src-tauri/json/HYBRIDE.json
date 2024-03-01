@@ -1,14 +1,77 @@
 [
-    {
-      "type": "taille",
-      "options": [{"code": "H02", "libellé": "Hybride n°2"}, {"code": "H03", "libellé": "Hybride n°3"}, {"code": "H04", "libellé":"Hybride n°4"}, {"code": "H05", "libellé": "Hybride n°5"}, {"code": "H06", "libellé": "Hybride n°6"}, {"code": "H07", "libellé": "Hybride n°7"}, {"code": "H08", "libellé": "Hybride n°8"}]
-    },
-    {
-        "type": "couleur",
-        "options": [{"code": "F01", "libellé": "Flex Lady"}, {"code": "F03", "libellé": "Flex Regular"}, {"code": "F04", "libellé": "Flex Stiff"}, {"code": "F05", "libellé": "Flex X Stiff"},  {"code": "F06", "libellé": "Flex Lite"}, {"code": "F07", "libellé": "Flex A (senior)"}]
+  {
+    "type": "taille",
+    "options": [
+      {
+        "code": "H02",
+        "libellé": "Hybride n°2"
       },
       {
-        "type": "matière",
-        "options": [{"code": "DROIT", "libellé": "Droitier"}, {"code": "GAUCH", "libellé": "Gaucher"}]
+        "code": "H03",
+        "libellé": "Hybride n°3"
+      },
+      {
+        "code": "H04",
+        "libellé": "Hybride n°4"
+      },
+      {
+        "code": "H05",
+        "libellé": "Hybride n°5"
+      },
+      {
+        "code": "H06",
+        "libellé": "Hybride n°6"
+      },
+      {
+        "code": "H07",
+        "libellé": "Hybride n°7"
+      },
+      {
+        "code": "H08",
+        "libellé": "Hybride n°8"
       }
-  ]
+    ]
+  },
+  {
+    "type": "couleur",
+    "options": [
+      {
+        "code": "F01",
+        "libellé": "Flex Lady"
+      },
+      {
+        "code": "F03",
+        "libellé": "Flex Regular"
+      },
+      {
+        "code": "F04",
+        "libellé": "Flex Stiff"
+      },
+      {
+        "code": "F05",
+        "libellé": "Flex X Stiff"
+      },
+      {
+        "code": "F06",
+        "libellé": "Flex Lite"
+      },
+      {
+        "code": "F07",
+        "libellé": "Flex A (senior)"
+      }
+    ]
+  },
+  {
+    "type": "matière",
+    "options": [
+      {
+        "code": "DROIT",
+        "libellé": "Droitier"
+      },
+      {
+        "code": "GAUCH",
+        "libellé": "Gaucher"
+      }
+    ]
+  }
+]

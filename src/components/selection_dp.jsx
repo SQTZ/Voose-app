@@ -50,16 +50,16 @@ export default SelectionDP; // Exportez le composant en tant que composant par d
 
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SubmitToCSVtest } from '../js/functions';
 import optionsprde from '../json/optiondp.json';
-import optionsfamily from '../json/optionfamily.json';
-import optionstypeproduct from '../json/optiontypeproduct.json';
-import optionssexe from '../json/optionsexe.json';
-import optionsannee from '../json/optionannee.json';
-import optionsmarque from '../json/optionmarque.json';
-import optionsachatfournisseur from '../json/optionmarque.json';
-import optionscategorie from '../json/optioncategorie.json';
+import optionsfamily from '../../src-tauri/json/optionfamily.json';
+import optionstypeproduct from '../../src-tauri/json/optiontypeproduct.json';
+import optionssexe from '../../src-tauri/json/optionsexe.json';
+import optionsannee from '../../src-tauri/json/optionannee.json';
+import optionsmarque from '../../src-tauri/json/optionmarque.json';
+import optionsachatfournisseur from '../../src-tauri/json/optionmarque.json';
+import optionscategorie from '../../src-tauri/json/optioncategorie.json';
 import 'typeface-montserrat';
 import { event } from '@tauri-apps/api';
 import { availableMonitors } from '@tauri-apps/api/window';
@@ -230,6 +230,8 @@ function SelectionDP() {
         setTarifaumodele("FAUX");
         // Ajoutez d'autres états à réinitialiser ici
     };
+
+    console.log('jai le fichier', optionsmarque);
 
     return (
         <div className='dashboard-container'>
@@ -822,5 +824,8 @@ function SelectionDP() {
 }
 
 export default SelectionDP;
+
+
+
 
 
