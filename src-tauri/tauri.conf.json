@@ -43,13 +43,7 @@
         "json/SFER.json",
         "json/PUTTER.json",
         "json/HTEXTILE.json",
-        "json/BTEXTILE.json",
-        "json/optionannee.json",
-        "json/optioncategorie.json",
-        "json/optionfamily.json",
-        "json/optionmarque.json",
-        "json/optionsexe.json",
-        "json/optiontypeproduct.json"
+        "json/BTEXTILE.json"
       ]
     },
     "security": {

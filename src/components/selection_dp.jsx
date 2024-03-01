@@ -53,36 +53,23 @@ export default SelectionDP; // Exportez le composant en tant que composant par d
 import React, { useState, useEffect } from 'react';
 import { SubmitToCSVtest } from '../js/functions';
 import optionsprde from '../json/optiondp.json';
-import optionsfamily from '../../src-tauri/json/optionfamily.json';
-import optionstypeproduct from '../../src-tauri/json/optiontypeproduct.json';
-import optionssexe from '../../src-tauri/json/optionsexe.json';
-import optionsannee from '../../src-tauri/json/optionannee.json';
-import optionsmarque from '../../src-tauri/json/optionmarque.json';
-import optionsachatfournisseur from '../../src-tauri/json/optionmarque.json';
-import optionscategorie from '../../src-tauri/json/optioncategorie.json';
+import optionsfamily from '../json/optionfamily.json';
+import optionstypeproduct from '../json/optiontypeproduct.json';
+import optionssexe from '../json/optionsexe.json';
+import optionsannee from '../json/optionannee.json';
+import optionsmarque from '../json/optionmarque.json';
+import optionsachatfournisseur from '../json/optionmarque.json';
+import optionscategorie from '../json/optioncategorie.json';
 import 'typeface-montserrat';
 import { event } from '@tauri-apps/api';
 import { availableMonitors } from '@tauri-apps/api/window';
 import { transformCallback } from '@tauri-apps/api/tauri';
 import SelectionDPtest from './selectiontest';
 import Navbar from './navbar';
-import { invoke } from '@tauri-apps/api/tauri';
 
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
     const [inputSets, setInputSets] = useState([{ selectedOptionPRDE: 'PR' }]);
-
-    const [data, setData] = useState(null);
-
-  useEffect(() => {
-    invoke('read_configjson_files') // Assurez-vous que le nom de la commande correspond à votre backend Rust
-      .then((jsonFiles) => {
-        // Traitez les fichiers JSON reçus, par exemple :
-        console.log(jsonFiles);
-        setData(jsonFiles);
-      })
-      .catch((error) => console.error('Erreur lors de la lecture des fichiers JSON:', error));
-  }, []);
 
     // Gestion du changement de sélection pour chaque ensemble d'inputs
     const handleSelectChangePRDE = (event, index) => {
