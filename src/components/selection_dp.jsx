@@ -66,11 +66,12 @@ import { availableMonitors } from '@tauri-apps/api/window';
 import { transformCallback } from '@tauri-apps/api/tauri';
 import SelectionDPtest from './selectiontest';
 import Navbar from './navbar';
+import { invoke } from '@tauri-apps/api/tauri';
 
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
     const [inputSets, setInputSets] = useState([{ selectedOptionPRDE: 'PR' }]);
-    
+
     const [data, setData] = useState(null);
 
   useEffect(() => {
