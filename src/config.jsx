@@ -58,7 +58,7 @@ function Config() {
                         </svg>
                     </Link>
                 </div>
-                <div><span className='items-end'>V.0.0.3</span></div>
+                <div><span className='items-end'>V.0.1.0</span></div>
             </div>
         </div>
 

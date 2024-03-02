@@ -58,7 +58,7 @@ function SelectionDPtest() {
     return (
         <div>
             {/* Section pour définir le fichier JSON */}
-            <div>
+            <div className='box'>
                 <form>
                     <div className='container-input'>
                         <input

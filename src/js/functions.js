@@ -227,6 +227,14 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
         // Envoi des données à la fonction 'create_csv_on_desktop' de Tauri et attendre que cela soit terminé
         await invoke('create_csv_on_desktop', { data: dataForCSV, nameFile: nameFile });
         console.log('Fichier CSV créé avec succès.');
+
+        //j'affiche la pop-up de succès puis je la retire definitivement
+        document.getElementById('alert-success').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('alert-success').style.display = 'none';
+        }, 2000);
+
+
     } catch (error) {
         console.error('Erreur lors de la création du fichier CSV:', error);
     }

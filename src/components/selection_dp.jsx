@@ -67,6 +67,8 @@ import { transformCallback } from '@tauri-apps/api/tauri';
 import SelectionDPtest from './selectiontest';
 import Navbar from './navbar';
 
+import Success from './notifications/success';
+
 function SelectionDP() {
     // Chaque élément de inputSets représente un ensemble d'inputs
     const [inputSets, setInputSets] = useState([{ selectedOptionPRDE: 'PR' }]);
@@ -202,7 +204,7 @@ function SelectionDP() {
 
     // Ajouter un nouvel ensemble d'inputs
     const addInputSet = () => {
-        setInputSets([...inputSets, {}]);
+        setInputSets([...inputSets, { }]);
     };
 
     const duplicateInputSet = (index) => {
@@ -253,6 +255,8 @@ function SelectionDP() {
                             <h1>Créer</h1>
                             <p className='desc'>Pour connaître plus d'informations sur le fonctionnement de la création. Cliquez-ici.</p>
                         </div>
+                        
+                        <Success />
                     </div>
 
                     <div>
@@ -296,16 +300,11 @@ function SelectionDP() {
                                 </button>
                             </div>
 
-
-
                             {inputSet.selectedOptionPRDE !== 'PR' && (
                                 <>
                                     <SelectionDPtest />
                                 </>
                             )}
-
-
-
 
 
                             {inputSet.selectedOptionPRDE !== 'DE' && (
