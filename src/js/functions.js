@@ -231,8 +231,3 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
         console.error('Erreur lors de la création du fichier CSV:', error);
     }
 }
-
-
-
-
-

@@ -119,6 +119,12 @@ function SelectionDPtest() {
 
                     <div className='container-input blocked'>
                         {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`b_colonne_${index}`} value="" />
+                        <div className='texter-btn'>B</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
                         <input type="text" id={`c_colonne_${index}`} value="<A générer>" />
                         <div className='texter-btn'>C</div>
                     </div>
@@ -129,6 +135,7 @@ function SelectionDPtest() {
                             type="checkbox"
                             id={`l_colonne_${index}`}
                             value="Vrai"
+                            checked={true}
                         />
                         <div className='texter-btn'>L</div>
                     </div>
@@ -139,6 +146,7 @@ function SelectionDPtest() {
                             type="checkbox"
                             id={`m_colonne_${index}`}
                             value="Vrai"
+                            checked={true}
                         />
                         <div className='texter-btn'>M</div>
                     </div>
@@ -147,6 +155,95 @@ function SelectionDPtest() {
                         {/* <label htmlFor={`methodevalorisationstock_${index}`}>Méthode valorisation Stock</label> */}
                         <input type="text" id={`u_colonne_${index}`} value={"Prix moyen pondéré d'achat"} />
                         <div className='texter-btn'>U</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`g_colonne_${index}`} value="" />
+                        <div className='texter-btn'>G</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`h_colonne_${index}`} value="" />
+                        <div className='texter-btn'>H</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`j_colonne_${index}`} value="" />
+                        <div className='texter-btn'>J</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`k_colonne_${index}`} value="" />
+                        <div className='texter-btn'>K</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`p_colonne_${index}`} value="" />
+                        <div className='texter-btn'>P</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`r_colonne_${index}`} value="" />
+                        <div className='texter-btn'>R</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`s_colonne_${index}`} value="" />
+                        <div className='texter-btn'>S</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`t_colonne_${index}`} value="" />
+                        <div className='texter-btn'>T</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`v_colonne_${index}`} value="" />
+                        <div className='texter-btn'>V</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`w_colonne_${index}`} value="" />
+                        <div className='texter-btn'>W</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`x_colonne_${index}`} value="" />
+                        <div className='texter-btn'>X</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`y_colonne_${index}`} value="" />
+                        <div className='texter-btn'>Y</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`z_colonne_${index}`} value="" />
+                        <div className='texter-btn'>Z</div>
+                    </div>
+
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`aa_colonne_${index}`} value="" />
+                        <div className='texter-btn'>AA</div>
+                    </div>
+                    <div className='container-input blocked'>
+                        {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
+                        <input type="text" id={`ab_colonne_${index}`} value="" />
+                        <div className='texter-btn'>AB</div>
                     </div>
 
                     {/* Détails de la combinaison */}
