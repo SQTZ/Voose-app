@@ -1,7 +1,7 @@
 [
     {
       "type": "taille",
-      "options": [{"code": "T0S", "libellé": "Taille XS"}, {"code": "T1S", "libellé": "Taille S"}, {"code": "TM0", "libellé": "Taille M"}, {"code": "TNL", "libellé": "Taille L"}, {"code": "TX1", "libellé": "Taille XL"}, {"code": "TX2", "libellé": "Taille 2XL"}, {"code": "TX3", "libellé": "Taille 3XL"}]
+      "options": [{"code": "T0XXS", "libellé": "Taille XXS"}, {"code": "T0S", "libellé": "Taille XS"}, {"code": "T1S", "libellé": "Taille S"}, {"code": "TM0", "libellé": "Taille M"}, {"code": "TNL", "libellé": "Taille L"}, {"code": "TX1", "libellé": "Taille XL"}, {"code": "TX2", "libellé": "Taille 2XL"}, {"code": "TX3", "libellé": "Taille 3XL"}]
     },
     {
         "type": "couleur",

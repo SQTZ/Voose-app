@@ -204,9 +204,7 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
             colonneG.value = 'VP';
             colonneB.value = 'TX' + colonneB.value.substring(3);
         };
-
-
-
+        
 
         // Vérifier si l'option DE est sélectionnée pour l'ensemble d'inputs courant
         const isDESelected = colonneA && colonneA.value === 'DE';
@@ -239,3 +237,5 @@ export async function SubmitToCSVtest() { // Notez le mot-clé async ici
         console.error('Erreur lors de la création du fichier CSV:', error);
     }
 }
+
+

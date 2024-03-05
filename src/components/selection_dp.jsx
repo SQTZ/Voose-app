@@ -62,7 +62,7 @@ import optionsachatfournisseur from '../json/optionmarque.json';
 import optionscategorie from '../json/optioncategorie.json';
 import 'typeface-montserrat';
 import { event } from '@tauri-apps/api';
-import { availableMonitors } from '@tauri-apps/api/window';
+import { availableMonitors, getAll } from '@tauri-apps/api/window';
 import { transformCallback } from '@tauri-apps/api/tauri';
 import SelectionDPtest from './selectiontest';
 import Navbar from './navbar';
@@ -111,9 +111,22 @@ function SelectionDP() {
     // Gestion du changement de sélection pour S-Famille (Type de Produit)
     const handleSelectChangeTypeProduct = (event, index) => {
         const newInputSets = [...inputSets];
-        newInputSets[index].selectedOptionTypeProduct = event.target.value;
+        const selectedOptionValue = event.target.value;
+    
+        // Trouvez le texte associé à la valeur sélectionnée pour S-Famille
+        const selectedOptionText = optionstypeproduct.find(option => option.value === selectedOptionValue)?.text || '';
+    
+        // Préparez la désignation en ajoutant S-Famille devant le texte existant
+        const existingDesignation = newInputSets[index].designation || '';
+        const newDesignation = selectedOptionText + " - " + existingDesignation;
+    
+        // Mettez à jour la désignation dans l'ensemble des entrées
+        newInputSets[index].selectedOptionTypeProduct = selectedOptionValue;
+        newInputSets[index].designation = newDesignation;
+    
         setInputSets(newInputSets);
     };
+    
 
     const handleSelectChangeSexe = (event, index) => {
         const newInputSets = [...inputSets];
@@ -170,13 +183,13 @@ function SelectionDP() {
         setInputSets(newInputSets);
     };
 
-    const [commercialise, setCommercialise] = useState("FAUX");
+    const [commercialise, setCommercialise] = useState("VRAI");
 
     const handleCheckboxChange = (e) => {
         setCommercialise(e.target.checked ? "VRAI" : "FAUX");
     };
 
-    const [stocke, setStocke] = useState("FAUX");
+    const [stocke, setStocke] = useState("VRAI");
 
     const handleCheckboxStockChange = (e) => {
         setStocke(e.target.checked ? "VRAI" : "FAUX");
@@ -224,13 +237,14 @@ function SelectionDP() {
 
     // Fonction pour réinitialiser le formulaire
     const resetForm = () => {
-        setInputSets([{ selectedOptionPRDE: 'PR' }]); // Réinitialise inputSets à un tableau avec un objet vide
-        // Réinitialiser les autres états ici, si nécessaire, par exemple :
-        setCommercialise("FAUX");
-        setStocke("FAUX");
+        /* 
+        setInputSets([{ selectedOptionPRDE: 'PR' }]);
         setDivers("FAUX");
         setTarifaumodele("FAUX");
-        // Ajoutez d'autres états à réinitialiser ici
+        */
+
+        //Je réactualise la page
+        window.location.reload();
     };
 
     console.log('jai le fichier', optionsmarque);
@@ -465,7 +479,7 @@ function SelectionDP() {
 
 
 
-                                    <div className='box'>
+                                    <div className='box blocked'>
                                         <div>
                                             <h3>Stocks</h3>
                                             <p>Cochez <span>L</span> & <span>M</span> par défaut</p>

@@ -187,6 +187,12 @@ function SelectionDPtest() {
                         <div className='texter-btn'>P</div>
                     </div>
 
+                    <div className='container-input'>
+                                            {/* <label htmlFor={`achatreference_${index}`}>Achat Réference</label> */}
+                                            <input type="text" id={`q_colonne_${index}`} placeholder='Achat Réference' />
+                                            <div className='texter-btn'>Q</div>
+                                        </div>
+
                     <div className='container-input blocked'>
                         {/* <label htmlFor={`c_${index}`}>Code Barre</label> */}
                         <input type="text" id={`r_colonne_${index}`} value="" />
