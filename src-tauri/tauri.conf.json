@@ -43,7 +43,8 @@
         "json/SFER.json",
         "json/PUTTER.json",
         "json/HTEXTILE.json",
-        "json/BTEXTILE.json"
+        "json/BTEXTILE.json",
+        "json/CHAUSSURE.json"
       ],
     "windows": {
       "wix": {
