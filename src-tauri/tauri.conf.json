@@ -10,16 +10,6 @@
     "version": "0.1.1"
   },
   "tauri": {
-    "updater": {
-      "active": true,
-      "pubkey": "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwnxecRzzlpMXlq8XWKprPobL7/tbeD8fXiAesTBhTgASRzhGzysgmji8Gv4XCZxRe4e5NJPcZCf6vPDC1zCj/PIWq2219t9m8+b4eukGGbaR2C8xbcYVw0MsQXKlfHmwRKWhhdcTSzxLzVNXD3ukt+NMw/WvhlBgIEhXkjr3wLEe77a3hkFQ3twZpZBl9dL3aPcUj7aiB4BBJNbdoNZxtssI0/1WFL9mUZuCOvTsC5TadjOJxyBAKvvAJWkgn9iZFQHiwk2EXNfW3GDRr/R4gUSnprIGF4hg9QVPmqP/ZOxBxQULbgWzht3EWEnZguHfoTi+EqoetEdfZMt8BTfKDZJjcF/MYHgX4CIWdsCSG+sIYu8jYVcjxKnVMHloD8vOXTUJvVQuPGQWWW/Nl0nbBlD4rCIfDLJB1+mlC7F8Y/r+CvMEPJyzaET4xcbJduSUHHtroeepkbXecByLr4tOhEE2R6mPs6LnlJz4VDWLoSdrPBHqUxaVoDF61uQ8UKfRlBsqUAe2QUDYFIoLwR+PS/w+ona3hSaxdq/MH23AdVn8omJwkiUReLvD7V7rjyl1OHIhe0uKS/FKibhcKoTNjYoNbW6umA29pD3wg9vqpkTQkI47hN1xNX6aRFPbk5DaZ4Xe8qzqqrbT5RP0PDbzfUnTVke/nyC5gGyONxBmq/cCAwEAAQ==",
-      "endpoints": ["https://raw.githubusercontent.com/SQTZ/Voose-app/main/updates.json"],
-      "dialog": true,
-
-      "windows": {
-        "installMode": "passive"
-      }
-    },
     "allowlist": {
       "all": false,
       "shell": {
