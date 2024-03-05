@@ -1,7 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { app } from '@tauri-apps/api';
 
 import ChangeDeclinaison from './settings/ChangeDeclinaison';
+import { checkUpdate } from '@tauri-apps/api/updater';
+
+async function verifierEtAppliquerMiseAJour() {
+  try {
+    const resultat = await checkUpdate();
+    if (resultat.shouldUpdate) {
+      console.log("Une mise à jour est disponible et sera téléchargée.");
+      // Vous pouvez ici ajouter une logique supplémentaire, comme informer l'utilisateur
+    } else {
+      console.log("Aucune mise à jour disponible.");
+    }
+  } catch (error) {
+    console.error("Erreur lors de la vérification de mise à jour:", error);
+  }
+}
+
+// Exemple d'appel de la fonction
+verifierEtAppliquerMiseAJour();
+
+
 
 function Config() {
     const [selectedComponent, setSelectedComponent] = useState('ChangeDeclinaison');
@@ -22,6 +43,21 @@ function Config() {
                 return; // Affiche par défaut un composant vide ou un autre composant de votre choix
         }
     };
+
+    const [version, setVersion] = useState('');
+
+  useEffect(() => {
+    async function fetchAppVersion() {
+      try {
+        const appVersion = await app.getVersion();
+        setVersion(appVersion);
+      } catch (err) {
+        console.error('Erreur lors de la récupération de la version de l’application:', err);
+      }
+    }
+
+    fetchAppVersion();
+  }, []); 
 
     return (
     <div className='dashboard-container'>
@@ -58,7 +94,7 @@ function Config() {
                         </svg>
                     </Link>
                 </div>
-                <div><span className='items-end'>V.0.1.0</span></div>
+                <div><span className='items-end'>v.{version}</span></div>
             </div>
         </div>
 

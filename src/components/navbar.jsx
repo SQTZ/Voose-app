@@ -1,11 +1,26 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../styles.css';
 
+import { app } from '@tauri-apps/api';
+
 function Navbar() {
+  const [version, setVersion] = useState('');
 
+  useEffect(() => {
+    async function fetchAppVersion() {
+      try {
+        const appVersion = await app.getVersion();
+        setVersion(appVersion);
+      } catch (err) {
+        console.error('Erreur lors de la récupération de la version de l’application:', err);
+      }
+    }
 
+    fetchAppVersion();
+  }, []); 
   return (
       <div className='left-box'>
         <Link to="/"><img src="iconvoose.png" alt="Voose icon"/></Link>
@@ -68,7 +83,7 @@ function Navbar() {
               </svg>
             </Link>
             </div>
-          <div><span className='items-end'>V.0.1.0</span></div>
+          <div><span className='items-end'>v.{version}</span></div>
         </div>
       </div>
   );
