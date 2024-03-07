@@ -3,6 +3,10 @@
     "type": "taille",
     "options": [
       {
+        "code": "361",
+        "libellé": "Pointure 36.5"
+      },
+      {
         "code": "370",
         "libellé": "Pointure 37"
       },
